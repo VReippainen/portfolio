@@ -21,20 +21,17 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const paths = pages.map((page) => ({
     params: { id: page.fields.id },
   }))
-  console.log('PATHS', paths)
-  const result = { paths, fallback: true }
+  const result = { paths, fallback: false }
   return result
 }
 
 export async function getStaticProps(
   context: GetStaticPropsContext
 ): Promise<GetStaticPropsResult<PageProps>> {
-  console.log('PARAMS', context)
   const pages = await fetchPages()
   const navUrls = pages.map((p) => {
     return { url: p.fields.id, name: p.fields.name }
   })
-  console.log('PARAMS', context.params)
   return {
     props: {
       pageEntry: pages.find((p) => p.fields.id === context?.params?.id),
