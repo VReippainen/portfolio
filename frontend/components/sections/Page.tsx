@@ -2,14 +2,16 @@ import { Entry } from 'contentful'
 import Head from 'next/head'
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
+import { BaseSectionModel } from '../../models/BaseSectionModel'
 import { NavUrl } from '../../models/NavUrl'
 import { PageModel } from '../../models/PageModel'
-import { SectionModel } from '../../models/SectionModel'
 import { getSectionById } from '../../utils/sectionMapper'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
-export function generatePage(sections: Entry<SectionModel>[]): ReactElement[] {
+export function generatePage(
+  sections: Entry<BaseSectionModel>[]
+): ReactElement[] {
   return sections
     .map((section) => {
       const SectionComponent = getSectionById(section.sys.contentType.sys.id)
