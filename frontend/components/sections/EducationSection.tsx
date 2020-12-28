@@ -6,8 +6,7 @@ import Image from 'next/image'
 import { EducationModel } from '../../models/EducationModel'
 
 const SectionItem = styled.div`
-  flex: 1;
-  margin: 20px;
+  margin-bottom: 20px;
 `
 
 function formatMinor(minors?: string[]): string {
@@ -24,21 +23,13 @@ export function EducationSection({
   fields,
 }: Entry<EducationModel>): ReactElement {
   const { id, major, name, gpa, height, minors, faculty, university } = fields
-  console.log('FACULTY', faculty)
   return (
-    <SectionContainer style={{ height, flex: 2 }} id={id}>
+    <SectionContainer style={{ flex: 2 }} id={id}>
       <SectionItem>
         <p>{`${name}, ${university}, ${faculty}`}</p>
         <p>{`Major: ${major}`}</p>
         <p>{formatMinor(minors)}</p>
         <p>{gpa}</p>
-      </SectionItem>
-      <SectionItem style={{ position: 'relative' }}>
-        <Image
-          src={'/assets/placeholder.jpeg'}
-          layout="fill"
-          objectFit="contain"
-        />
       </SectionItem>
     </SectionContainer>
   )

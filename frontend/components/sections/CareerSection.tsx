@@ -1,31 +1,72 @@
 import { Entry } from 'contentful'
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
-import { SectionContainer } from '../ui/SectionContainer'
-import Image from 'next/image'
 import { CareerModel } from '../../models/CareerModel'
+import { formatMonthYear } from '../../utils/format'
+import { Text } from '../ui/Text'
+import { Spacings } from '../../constants/Spacings'
 
 const SectionItem = styled.div`
   flex: 1;
   margin: 20px;
 `
 
+export const CareerContainer = styled.section`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`
+
+function formatDateRow(startDate: string, endDate: string, current: boolean) {
+  if (startDate) {
+    if (endDate) {
+      return `${formatMonthYear(new Date(startDate))} - ${formatMonthYear(
+        new Date(endDate)
+      )}`
+    } else if (current) {
+      return `${formatMonthYear(new Date(startDate))} - current`
+    }
+  }
+  return ''
+}
+
+function formatTechnologies(technologies: string[]): string {
+  if (technologies.length > 0) {
+    return `Technologies: ${technologies.reduce(
+      (acc, curr) => acc + ` ${curr},`,
+      ''
+    )}`
+  }
+}
+
 export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
-  const { id, title, description, height, technologies } = fields
+  const {
+    id,
+    title,
+    description,
+    technologies,
+    startDate,
+    endDate,
+    current,
+    company,
+  } = fields
   return (
-    <SectionContainer style={{ height, flex: 2 }} id={id}>
+    <CareerContainer style={{ flex: 3 }} id={id}>
       <SectionItem>
-        <p>{title}</p>
-        <p>{description}</p>
-        <p>{technologies}</p>
+        <Text style={{ marginBottom: Spacings.S8, fontWeight: 'bold' }}>
+          {company}
+        </Text>
+        <Text>{formatDateRow(startDate, endDate, current)}</Text>
       </SectionItem>
-      <SectionItem style={{ position: 'relative' }}>
-        <Image
-          src={'/assets/placeholder.jpeg'}
-          layout="fill"
-          objectFit="contain"
-        />
+      <SectionItem style={{ flex: 2 }}>
+        <Text style={{ marginBottom: Spacings.S8, fontWeight: 'bold' }}>
+          {title}
+        </Text>
+        <Text style={{ marginBottom: Spacings.S8 }}>{description}</Text>
+        <Text style={{ marginBottom: Spacings.S8 }}>
+          {formatTechnologies(technologies)}
+        </Text>
       </SectionItem>
-    </SectionContainer>
+    </CareerContainer>
   )
 }

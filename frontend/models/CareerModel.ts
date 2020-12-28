@@ -9,4 +9,5 @@ export interface CareerModel extends BaseSectionModel {
   current: boolean
   description: string
   technologies: string[]
+  company: string
 }
