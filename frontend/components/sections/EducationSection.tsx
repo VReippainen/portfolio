@@ -2,7 +2,6 @@ import { Entry } from 'contentful'
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
 import { SectionContainer } from '../ui/SectionContainer'
-import Image from 'next/image'
 import { EducationModel } from '../../models/EducationModel'
 
 const SectionItem = styled.div`
@@ -22,7 +21,7 @@ function formatMinor(minors?: string[]): string {
 export function EducationSection({
   fields,
 }: Entry<EducationModel>): ReactElement {
-  const { id, major, name, gpa, height, minors, faculty, university } = fields
+  const { id, major, name, gpa, minors, faculty, university } = fields
   return (
     <SectionContainer style={{ flex: 2 }} id={id}>
       <SectionItem>

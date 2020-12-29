@@ -1,7 +1,6 @@
 import { Entry } from 'contentful'
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
-import { Colors } from '../../constants/Colors'
 import { BaseSectionModel } from '../../models/BaseSectionModel'
 import { PageModel } from '../../models/PageModel'
 import { getSectionById } from '../../utils/sectionMapper'
