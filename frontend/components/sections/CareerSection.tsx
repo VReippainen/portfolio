@@ -51,7 +51,11 @@ export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
     current,
     company,
     link,
+    hide,
   } = fields
+  if (hide) {
+    return null
+  }
   return (
     <CareerContainer style={{ flex: 3 }} id={id}>
       <SectionItem>
@@ -65,9 +69,11 @@ export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
           {title}
         </Text>
         <Text style={{ marginBottom: Spacings.S8 }}>{description}</Text>
-        <Text style={{ marginBottom: Spacings.S8 }}>
-          {formatTechnologies(technologies)}
-        </Text>
+        {technologies ? (
+          <Text style={{ marginBottom: Spacings.S8 }}>
+            {formatTechnologies(technologies)}
+          </Text>
+        ) : null}
         {link ? <LinkPrimary {...link} /> : null}
       </SectionItem>
     </CareerContainer>

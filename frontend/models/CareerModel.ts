@@ -9,8 +9,9 @@ export interface CareerModel extends BaseSectionModel {
   startDate: string
   endDate?: string
   current: boolean
-  description: string
-  technologies: string[]
+  description?: string
+  technologies?: string[]
   company: string
-  link: Entry<LinkModel>
+  link?: Entry<LinkModel>
+  hide?: boolean
 }
