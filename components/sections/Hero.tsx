@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { HeroModel } from '../../models/HeroModel'
 import { Text } from '../../components/ui/Text'
 import { FontSize } from '../../constants/FontSize'
-import Image from 'next/image'
 import { Colors } from '../../constants/Colors'
 
 const HeroContainer = styled.div`
@@ -28,10 +27,18 @@ const TextContainer = styled.div`
   display: flex;
 `
 
+const Image = styled.div`
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url('/assets/placeholder.jpeg');
+  background-size: cover;
+`
+
 function HeroInternal({ title, paragraph }: HeroModel): ReactElement {
   return (
     <HeroContainer>
-      <Image src={'/assets/placeholder.jpeg'} layout="fill" objectFit="cover" />
+      <Image />
       <ColorBackground />
       <TextContainer>
         <Text
