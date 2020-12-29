@@ -11,7 +11,7 @@ import { FontSize } from '../../constants/FontSize'
 
 const SectionItem = styled.div`
   flex: 1;
-  margin: 20px;
+  margin-top: ${Spacings.S20}px;
 `
 
 export const CareerContainer = styled.section`
@@ -21,6 +21,7 @@ export const CareerContainer = styled.section`
   ${MobileScreen} {
     flex-direction: column;
   }
+  margin: 20px;
 `
 
 function formatDateRow(startDate: string, endDate: string, current: boolean) {
