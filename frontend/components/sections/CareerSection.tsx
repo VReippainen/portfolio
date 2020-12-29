@@ -5,6 +5,7 @@ import { CareerModel } from '../../models/CareerModel'
 import { formatMonthYear } from '../../utils/format'
 import { Text } from '../ui/Text'
 import { Spacings } from '../../constants/Spacings'
+import { LinkPrimary } from './LinkPrimary'
 
 const SectionItem = styled.div`
   flex: 1;
@@ -49,6 +50,7 @@ export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
     endDate,
     current,
     company,
+    link,
   } = fields
   return (
     <CareerContainer style={{ flex: 3 }} id={id}>
@@ -66,6 +68,7 @@ export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
         <Text style={{ marginBottom: Spacings.S8 }}>
           {formatTechnologies(technologies)}
         </Text>
+        {link ? <LinkPrimary {...link} /> : null}
       </SectionItem>
     </CareerContainer>
   )

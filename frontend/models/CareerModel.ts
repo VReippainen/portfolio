@@ -1,4 +1,6 @@
+import { Entry } from 'contentful'
 import { BaseSectionModel } from './BaseSectionModel'
+import { LinkModel } from './LinkModel'
 
 export interface CareerModel extends BaseSectionModel {
   id: string
@@ -10,4 +12,5 @@ export interface CareerModel extends BaseSectionModel {
   description: string
   technologies: string[]
   company: string
+  link: Entry<LinkModel>
 }
