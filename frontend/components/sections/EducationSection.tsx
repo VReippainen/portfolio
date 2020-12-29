@@ -1,35 +1,84 @@
 import { Entry } from 'contentful'
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
-import { SectionContainer } from '../ui/SectionContainer'
+import { formatYear } from '../../utils/format'
+import { Text } from '../ui/Text'
+import { Spacings } from '../../constants/Spacings'
 import { EducationModel } from '../../models/EducationModel'
 
-const SectionItem = styled.div`
-  margin-bottom: 20px;
-`
-
-function formatMinor(minors?: string[]): string {
+function formatMinors(minors?: string[]): string {
   if (!minors || minors.length === 0) {
     return ''
   } else if (minors.length === 1) {
     return `Minor: ${minors[0]}`
   } else {
-    return `TODO`
+    return `Minors: ${minors.reduce((acc, curr) => acc + ` ${curr},`, '')}`
   }
+}
+
+const SectionItem = styled.div`
+  flex: 1;
+  margin: 20px;
+`
+
+export const EducationContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`
+
+function formatDateRow(startDate: string, endDate: string, ongoing: boolean) {
+  let formattedRow = ''
+  if (startDate) {
+    formattedRow += `${formatYear(new Date(startDate))} - `
+  }
+  if (endDate) {
+    formattedRow += formatYear(new Date(endDate))
+  }
+  if (ongoing) {
+    formattedRow += ' (estimated)'
+  }
+  return formattedRow
+}
+
+export function EducationSectionInternal({
+  id,
+  name,
+  minors,
+  startDate,
+  endDate,
+  faculty,
+  university,
+  gpa,
+  major,
+  ongoing,
+  creditsDone,
+  creditsTotal,
+}: EducationModel): ReactElement {
+  return (
+    <EducationContainer style={{ flex: 3 }} id={id}>
+      <SectionItem>
+        <Text style={{ marginBottom: Spacings.S8, fontWeight: 'bold' }}>
+          {`${university}, ${faculty}`}
+        </Text>
+        <Text>{formatDateRow(startDate, endDate, ongoing)}</Text>
+      </SectionItem>
+      <SectionItem style={{ flex: 2, marginBottom: Spacings.S8 }}>
+        <Text style={{ marginBottom: Spacings.S8, fontWeight: 'bold' }}>
+          {`${name} - ${major}`}
+        </Text>
+        {ongoing && creditsDone && creditsTotal ? (
+          <Text>{`Credits done: ${creditsDone}/${creditsTotal} cr.`}</Text>
+        ) : null}
+        <Text>{`${formatMinors(minors)}`}</Text>
+        {gpa ? <Text>{`GPA: ${gpa}`}</Text> : null}
+      </SectionItem>
+    </EducationContainer>
+  )
 }
 
 export function EducationSection({
   fields,
 }: Entry<EducationModel>): ReactElement {
-  const { id, major, name, gpa, minors, faculty, university } = fields
-  return (
-    <SectionContainer style={{ flex: 2 }} id={id}>
-      <SectionItem>
-        <p>{`${name}, ${university}, ${faculty}`}</p>
-        <p>{`Major: ${major}`}</p>
-        <p>{formatMinor(minors)}</p>
-        <p>{gpa}</p>
-      </SectionItem>
-    </SectionContainer>
-  )
+  return <EducationSectionInternal {...fields} />
 }

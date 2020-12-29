@@ -34,10 +34,14 @@ function HeroInternal({ title, paragraph }: HeroModel): ReactElement {
       <Image src={'/assets/placeholder.jpeg'} layout="fill" />
       <ColorBackground />
       <TextContainer>
-        <Text style={{ fontSize: FontSize.S64, color: Colors.textWhite }}>
+        <Text
+          style={{ fontSize: FontSize.S64, color: Colors.backgroundSecondary }}
+        >
           {title}
         </Text>
-        <Text style={{ fontSize: FontSize.S32, color: Colors.textWhite }}>
+        <Text
+          style={{ fontSize: FontSize.S32, color: Colors.backgroundSecondary }}
+        >
           {paragraph}
         </Text>
       </TextContainer>
