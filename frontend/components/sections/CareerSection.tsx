@@ -1,28 +1,12 @@
 import { Entry } from 'contentful'
 import React, { ReactElement } from 'react'
-import styled from 'styled-components'
 import { CareerModel } from '../../models/CareerModel'
 import { formatMonthYear } from '../../utils/format'
 import { Text } from '../ui/Text'
 import { Spacings } from '../../constants/Spacings'
 import { LinkPrimary } from './LinkPrimary'
-import { MobileScreen } from '../../constants/Breakpoints'
 import { FontSize } from '../../constants/FontSize'
-
-const SectionItem = styled.div`
-  flex: 1;
-  margin-top: ${Spacings.S20}px;
-`
-
-export const CareerContainer = styled.section`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  ${MobileScreen} {
-    flex-direction: column;
-  }
-  margin: 20px;
-`
+import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 
 function formatDateRow(startDate: string, endDate: string, current: boolean) {
   if (startDate) {
@@ -63,7 +47,7 @@ export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
     return null
   }
   return (
-    <CareerContainer style={{ flex: 3 }} id={id}>
+    <SectionContainer style={{ flex: 3 }} id={id}>
       <SectionItem>
         <Text
           style={{
@@ -88,6 +72,6 @@ export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
         ) : null}
         {link ? <LinkPrimary {...link} /> : null}
       </SectionItem>
-    </CareerContainer>
+    </SectionContainer>
   )
 }

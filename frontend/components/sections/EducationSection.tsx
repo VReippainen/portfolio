@@ -1,12 +1,11 @@
 import { Entry } from 'contentful'
 import React, { ReactElement } from 'react'
-import styled from 'styled-components'
 import { formatYear } from '../../utils/format'
 import { Text } from '../ui/Text'
 import { Spacings } from '../../constants/Spacings'
 import { EducationModel } from '../../models/EducationModel'
-import { MobileScreen } from '../../constants/Breakpoints'
 import { FontSize } from '../../constants/FontSize'
+import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 
 function formatMinors(minors?: string[]): string {
   if (!minors || minors.length === 0) {
@@ -17,20 +16,6 @@ function formatMinors(minors?: string[]): string {
     return `Minors: ${minors.reduce((acc, curr) => acc + ` ${curr},`, '')}`
   }
 }
-
-const SectionItem = styled.div`
-  flex: 1;
-  margin: 20px;
-`
-
-export const EducationContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  ${MobileScreen} {
-    flex-direction: column;
-  }
-`
 
 function formatDateRow(startDate: string, endDate: string, ongoing: boolean) {
   let formattedRow = ''
@@ -61,7 +46,7 @@ export function EducationSectionInternal({
   creditsTotal,
 }: EducationModel): ReactElement {
   return (
-    <EducationContainer style={{ flex: 3 }} id={id}>
+    <SectionContainer style={{ flex: 3 }} id={id}>
       <SectionItem>
         <Text
           style={{
@@ -84,7 +69,7 @@ export function EducationSectionInternal({
         <Text>{`${formatMinors(minors)}`}</Text>
         {gpa ? <Text>{`GPA: ${gpa}`}</Text> : null}
       </SectionItem>
-    </EducationContainer>
+    </SectionContainer>
   )
 }
 
