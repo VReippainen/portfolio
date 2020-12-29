@@ -6,6 +6,8 @@ import { formatMonthYear } from '../../utils/format'
 import { Text } from '../ui/Text'
 import { Spacings } from '../../constants/Spacings'
 import { LinkPrimary } from './LinkPrimary'
+import { MobileScreen } from '../../constants/Breakpoints'
+import { FontSize } from '../../constants/FontSize'
 
 const SectionItem = styled.div`
   flex: 1;
@@ -16,6 +18,9 @@ export const CareerContainer = styled.section`
   display: flex;
   flex-direction: row;
   width: 100%;
+  ${MobileScreen} {
+    flex-direction: column;
+  }
 `
 
 function formatDateRow(startDate: string, endDate: string, current: boolean) {
@@ -59,7 +64,13 @@ export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
   return (
     <CareerContainer style={{ flex: 3 }} id={id}>
       <SectionItem>
-        <Text style={{ marginBottom: Spacings.S8, fontWeight: 'bold' }}>
+        <Text
+          style={{
+            marginBottom: Spacings.S8,
+            fontWeight: 'bold',
+            fontSize: FontSize.S20,
+          }}
+        >
           {company}
         </Text>
         <Text>{formatDateRow(startDate, endDate, current)}</Text>

@@ -5,6 +5,8 @@ import { formatYear } from '../../utils/format'
 import { Text } from '../ui/Text'
 import { Spacings } from '../../constants/Spacings'
 import { EducationModel } from '../../models/EducationModel'
+import { MobileScreen } from '../../constants/Breakpoints'
+import { FontSize } from '../../constants/FontSize'
 
 function formatMinors(minors?: string[]): string {
   if (!minors || minors.length === 0) {
@@ -25,6 +27,9 @@ export const EducationContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  ${MobileScreen} {
+    flex-direction: column;
+  }
 `
 
 function formatDateRow(startDate: string, endDate: string, ongoing: boolean) {
@@ -58,7 +63,13 @@ export function EducationSectionInternal({
   return (
     <EducationContainer style={{ flex: 3 }} id={id}>
       <SectionItem>
-        <Text style={{ marginBottom: Spacings.S8, fontWeight: 'bold' }}>
+        <Text
+          style={{
+            marginBottom: Spacings.S8,
+            fontWeight: 'bold',
+            fontSize: FontSize.S20,
+          }}
+        >
           {`${university}, ${faculty}`}
         </Text>
         <Text>{formatDateRow(startDate, endDate, ongoing)}</Text>
