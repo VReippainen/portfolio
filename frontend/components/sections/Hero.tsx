@@ -31,7 +31,7 @@ const TextContainer = styled.div`
 function HeroInternal({ title, paragraph }: HeroModel): ReactElement {
   return (
     <HeroContainer>
-      <Image src={'/assets/placeholder.jpeg'} layout="fill" />
+      <Image src={'/assets/placeholder.jpeg'} layout="fill" objectFit="cover" />
       <ColorBackground />
       <TextContainer>
         <Text
