@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "deploy": "yarn build && yarn export",
     "export": "next export",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
