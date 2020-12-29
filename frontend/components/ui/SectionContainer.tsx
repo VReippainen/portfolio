@@ -7,7 +7,9 @@ const SectionItem = styled.div`
   margin-top: ${Spacings.S20}px;
   margin-left: ${Spacings.S20}px;
   ${MobileScreen} {
-    margin: 20px 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: ${Spacings.S20}px;
   }
 `
 
