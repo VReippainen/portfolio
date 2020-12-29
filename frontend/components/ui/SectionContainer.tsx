@@ -14,7 +14,6 @@ const SectionItem = styled.div`
 const SectionContainer = styled.section`
   display: flex;
   flex-direction: row;
-  width: 100%;
   margin: 20px;
   ${MobileScreen} {
     flex-direction: column;

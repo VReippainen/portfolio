@@ -1,18 +1,14 @@
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
-import { MobileScreen } from '../../constants/Breakpoints'
 import { Colors } from '../../constants/Colors'
+import { SectionPadding } from '../ui/SectionPadding'
 import { generateSections, PageProps } from './HomePage'
 
-const Container = styled.section`
+const Container = styled(SectionPadding)`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 40px 180px;
   background-color: ${Colors.backgroundPrimary};
-  ${MobileScreen} {
-    padding: 40px 20px;
-  }
 `
 
 export function CareerPage({ pageEntry }: PageProps): ReactElement {
