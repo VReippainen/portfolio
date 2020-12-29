@@ -14,7 +14,9 @@ const A = styled.a`
 function LinkPrimaryInternal({ url, title }: LinkModel): ReactElement {
   return (
     <Link href={url} passHref>
-      <A target="_blank">{title}</A>
+      <A target="_blank" rel="noopener">
+        {title}
+      </A>
     </Link>
   )
 }
