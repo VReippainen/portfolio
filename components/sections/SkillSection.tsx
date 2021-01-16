@@ -9,18 +9,15 @@ import { Spacings } from '../../constants/Spacings'
 import { SkillModel } from '../../models/SkillModel'
 import { FlexRow } from '../ui/FlexRow'
 import styled from 'styled-components'
-import { MobileScreen } from '../../constants/Breakpoints'
 
 const SkillContainer = styled(FlexRow)`
   flex: 1;
   flex-basis: 45%;
+  min-width: 300px;
   &:hover {
     background-color: ${Colors.lightGrey};
   }
   padding: ${Spacings.S6}px ${Spacings.S8}px;
-  ${MobileScreen} {
-    padding: ${Spacings.S6}px 0;
-  }
 `
 
 interface StarProps {
