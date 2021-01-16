@@ -20,10 +20,11 @@ const ColorBackground = styled.div`
 
 const TextContainer = styled.div`
   text-align: center;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  top: 40%;
   justify-content: center;
   flex-direction: column;
-  min-height: 100vh;
   display: flex;
 `
 
