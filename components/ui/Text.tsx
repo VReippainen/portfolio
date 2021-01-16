@@ -7,3 +7,7 @@ export const Text = styled.p`
   color: ${Colors.darkGrey};
   margin: 0;
 `
+
+export const TextBold = styled(Text)`
+  font-weight: bold;
+`
