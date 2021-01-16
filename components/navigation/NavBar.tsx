@@ -4,6 +4,7 @@ import { Colors } from '../../constants/Colors'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { Spacings } from '../../constants/Spacings'
+import { MobileScreen } from '../../constants/Breakpoints'
 
 interface Props {
   navUrls: NavUrl[]
@@ -40,6 +41,9 @@ const NavBarList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  ${MobileScreen} {
+    display: none;
+  }
 `
 
 const NavItem = styled.li`
@@ -50,6 +54,7 @@ const NavItem = styled.li`
   }
 `
 
+// TODO: Implement NavBar for mobile
 export function NavBar({ navUrls }: Props): ReactElement {
   return (
     <NavBarList>
