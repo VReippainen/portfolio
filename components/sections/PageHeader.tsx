@@ -4,17 +4,15 @@ import styled from 'styled-components'
 import { Text } from '../ui/Text'
 import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
-import { CareerHeaderModel } from '../../models/CareerHeaderModel'
+import { PageHeaderModel } from '../../models/PageHeaderModel'
 import { Spacings } from '../../constants/Spacings'
 
 const TextContainer = styled.div`
   text-align: center;
 `
 
-function CareerHeaderInternal({
-  title,
-  paragraph,
-}: CareerHeaderModel): ReactElement {
+export function PageHeader({ fields }: Entry<PageHeaderModel>): ReactElement {
+  const { title, paragraph } = fields
   return (
     <TextContainer>
       <Text
@@ -30,7 +28,7 @@ function CareerHeaderInternal({
       <Text
         style={{
           fontSize: FontSize.S20,
-          color: Colors.textSecondary,
+          color: Colors.darkGrey,
           marginBottom: Spacings.S20,
         }}
       >
@@ -38,10 +36,4 @@ function CareerHeaderInternal({
       </Text>
     </TextContainer>
   )
-}
-
-export function CareerHeader({
-  fields,
-}: Entry<CareerHeaderModel>): ReactElement {
-  return <CareerHeaderInternal {...fields} />
 }

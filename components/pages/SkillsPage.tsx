@@ -9,7 +9,7 @@ const Container = styled(SectionPadding)`
   opacity: 0.9;
 `
 
-export function CareerPage({ pageEntry }: PageProps): ReactElement {
+export function SkillsPage({ pageEntry }: PageProps): ReactElement {
   const { sections, id } = pageEntry.fields
   return <Container {...{ id }}>{generateSections(sections)}</Container>
 }

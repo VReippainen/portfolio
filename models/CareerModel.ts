@@ -1,8 +1,8 @@
 import { Entry } from 'contentful'
-import { BaseSectionModel } from './BaseSectionModel'
+import { BaseModel } from './BaseModel'
 import { LinkModel } from './LinkModel'
 
-export interface CareerModel extends BaseSectionModel {
+export interface CareerModel extends BaseModel {
   id: string
   title: string
   height: number

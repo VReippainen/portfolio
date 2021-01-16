@@ -1,13 +1,11 @@
 import { Entry } from 'contentful'
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
-import { BaseSectionModel } from '../../models/BaseSectionModel'
+import { BaseModel } from '../../models/BaseModel'
 import { PageModel } from '../../models/PageModel'
 import { getSectionById } from '../../utils/sectionMapper'
 
-export function generateSections(
-  sections: Entry<BaseSectionModel>[]
-): ReactElement[] {
+export function generateSections(sections: Entry<BaseModel>[]): ReactElement[] {
   return sections
     .map((section) => {
       const SectionComponent = getSectionById(section.sys.contentType.sys.id)
@@ -25,6 +23,6 @@ export interface PageProps {
 }
 
 export function HomePage({ pageEntry }: PageProps): ReactElement {
-  const { sections, name } = pageEntry.fields
-  return <Container id={name}>{generateSections(sections)}</Container>
+  const { sections, id } = pageEntry.fields
+  return <Container {...{ id }}>{generateSections(sections)}</Container>
 }

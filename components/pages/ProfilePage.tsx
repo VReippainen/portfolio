@@ -5,11 +5,11 @@ import { SectionPadding } from '../ui/SectionPadding'
 import { generateSections, PageProps } from './HomePage'
 
 const Container = styled(SectionPadding)`
-  background-color: ${Colors.backgroundPrimary};
-  opacity: 0.9;
+  background-color: ${Colors.white};
+  min-height: 0;
 `
 
-export function CareerPage({ pageEntry }: PageProps): ReactElement {
+export function ProfilePage({ pageEntry }: PageProps): ReactElement {
   const { sections, id } = pageEntry.fields
   return <Container {...{ id }}>{generateSections(sections)}</Container>
 }

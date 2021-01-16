@@ -1,8 +1,8 @@
 import { Entry } from 'contentful'
-import { BaseSectionModel } from './BaseSectionModel'
+import { BaseModel } from './BaseModel'
 
 export interface PageModel {
   id: string
   name: string
-  sections: Entry<BaseSectionModel>[]
+  sections: Entry<BaseModel>[]
 }

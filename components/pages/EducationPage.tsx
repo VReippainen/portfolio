@@ -5,13 +5,10 @@ import { SectionPadding } from '../ui/SectionPadding'
 import { generateSections, PageProps } from './HomePage'
 
 const Container = styled(SectionPadding)`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: ${Colors.backgroundSecondary};
+  background-color: ${Colors.white};
 `
 
 export function EducationPage({ pageEntry }: PageProps): ReactElement {
-  const { sections, name } = pageEntry.fields
-  return <Container id={name}>{generateSections(sections)}</Container>
+  const { sections, id } = pageEntry.fields
+  return <Container {...{ id }}>{generateSections(sections)}</Container>
 }

@@ -27,28 +27,29 @@ const TextContainer = styled.div`
   display: flex;
 `
 
-const Image = styled.div`
+const Image = styled.div<{ imageUrl: string }>`
   min-height: 100%;
   width: 100%;
-  position: absolute;
-  background-image: url('/assets/placeholder.jpeg');
+  position: fixed;
+  z-index: -1;
+  background-image: url('${({ imageUrl }) => imageUrl}');
   background-size: cover;
 `
 
-function HeroInternal({ title, paragraph }: HeroModel): ReactElement {
+function HeroInternal({
+  title,
+  paragraph,
+  backgroundImage,
+}: HeroModel): ReactElement {
   return (
     <HeroContainer>
-      <Image />
+      <Image imageUrl={backgroundImage.fields.file.url} />
       <ColorBackground />
       <TextContainer>
-        <Text
-          style={{ fontSize: FontSize.S64, color: Colors.backgroundSecondary }}
-        >
+        <Text style={{ fontSize: FontSize.S64, color: Colors.white }}>
           {title}
         </Text>
-        <Text
-          style={{ fontSize: FontSize.S32, color: Colors.backgroundSecondary }}
-        >
+        <Text style={{ fontSize: FontSize.S32, color: Colors.white }}>
           {paragraph}
         </Text>
       </TextContainer>

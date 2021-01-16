@@ -1,6 +1,6 @@
-import { BaseSectionModel } from './BaseSectionModel'
+import { BaseModel } from './BaseModel'
 
-export interface EducationModel extends BaseSectionModel {
+export interface EducationModel extends BaseModel {
   major: string
   name: string
   gpa: number
