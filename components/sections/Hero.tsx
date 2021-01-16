@@ -8,6 +8,7 @@ import { Colors } from '../../constants/Colors'
 
 const HeroContainer = styled.div`
   min-height: 100vh;
+  min-height: -webkit-fill-available;
 `
 
 const ColorBackground = styled.div`
