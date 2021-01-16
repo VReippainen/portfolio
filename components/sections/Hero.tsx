@@ -30,7 +30,8 @@ const TextContainer = styled.div`
 const Image = styled.div<{ imageUrl: string }>`
   min-height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
+  z-index: -1;
   background-image: url('${({ imageUrl }) => imageUrl}');
   background-size: cover;
 `
