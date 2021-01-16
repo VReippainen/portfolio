@@ -5,10 +5,10 @@ import { HeroModel } from '../../models/HeroModel'
 import { Text } from '../../components/ui/Text'
 import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
+import Div100vh from 'react-div-100vh'
 
-const HeroContainer = styled.div`
+const HeroContainer = styled(Div100vh)`
   min-height: 100vh;
-  min-height: -webkit-fill-available;
 `
 
 const ColorBackground = styled.div`
