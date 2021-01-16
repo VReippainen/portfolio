@@ -25,7 +25,6 @@ function NavButton({ url, name }: NavUrl): ReactElement {
 
 const NavBarList = styled.ul`
   position: fixed;
-  background-color: ${Colors.darkGrey};
   top: ${Spacings.S20}px;
   right: ${Spacings.S20}px;
   border-radius: 6px;
@@ -41,11 +40,12 @@ const NavItem = styled.li`
   padding: 30px 15px;
   text-align: center;
   font-size: ${FontSize.S16}px;
+  background-color: ${Colors.darkGrey};
   color: ${Colors.white};
   text-align: center;
   text-decoration: none;
   &:hover {
-    color: ${Colors.primary};
+    opacity: 0.85;
   }
 `
 
