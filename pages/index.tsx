@@ -1,23 +1,24 @@
 import { GetStaticPropsResult } from 'next'
 import React, { ReactElement } from 'react'
-import { fetchPages } from '../services/contentfulService'
+import { fetchWebsite } from '../services/contentfulService'
 import { PageModel } from '../models/PageModel'
 import { Entry } from 'contentful'
 import styled from 'styled-components'
-import Head from 'next/head'
 import { Footer } from '../components/sections/Footer'
 import { getPageById } from '../utils/sectionMapper'
+import { NextSeo } from 'next-seo'
+import { MetaModel } from '../models/MetaModel'
+import { WebSiteModel } from '../models/WebSiteModel'
 
 export interface Props {
   pages: Entry<PageModel>[]
+  meta: Entry<MetaModel>
 }
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
-  const pages = await fetchPages()
+  const webSite = await fetchWebsite()
   return {
-    props: {
-      pages,
-    },
+    props: webSite.fields,
   }
 }
 
@@ -25,16 +26,13 @@ const Main = styled.main``
 
 const PageContainer = styled.div``
 
-export default function HomeInternal({ pages }: Props): ReactElement {
+export default function Home({ pages, meta }: WebSiteModel): ReactElement {
   const navUrls = pages.map((p) => {
     return { url: p.fields.id, name: p.fields.name }
   })
   return (
     <PageContainer>
-      <Head>
-        <title>Portfolio</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <NextSeo {...meta.fields} />
       <Main>
         {pages.map((page) => {
           const { id } = page.fields

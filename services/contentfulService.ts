@@ -1,5 +1,4 @@
 import { createClient, Entry } from 'contentful'
-import { PageModel } from '../models/PageModel'
 import { WebSiteModel } from '../models/WebSiteModel'
 
 const WEBSITE_ID = process.env.WEBSITE_ID
@@ -9,9 +8,9 @@ const client = createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 })
 
-export async function fetchPages(): Promise<Entry<PageModel>[]> {
+export async function fetchWebsite(): Promise<Entry<WebSiteModel>> {
   try {
-    const webSiteEntry = (await client
+    return (await client
       .getEntries({
         content_type: 'webSite',
         include: 3,
@@ -21,8 +20,6 @@ export async function fetchPages(): Promise<Entry<PageModel>[]> {
           (entry: Entry<WebSiteModel>) => entry.fields.id === WEBSITE_ID
         )
       )) as Entry<WebSiteModel>
-
-    return webSiteEntry.fields.pages as Entry<PageModel>[]
   } catch (error) {
     console.log('ERROR', error)
     throw error
