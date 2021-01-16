@@ -4,7 +4,7 @@ import { MobileScreen, TabletScreen } from '../../constants/Breakpoints'
 export const SectionPadding = styled.section`
   flex: 1;
   flex-direction: column;
-  padding: 40px 180px;
+  padding: 40px 180px 100px 180px;
   min-height: 100vh;
   ${TabletScreen} {
     padding: 40px 40px;

@@ -43,6 +43,7 @@ export function AboutMeSection({ fields }: Entry<AboutMeModel>): ReactElement {
         <Image imageUrl={image.fields.file.url} />
       </Column>
       <Column>
+        <Title>Details</Title>
         <TextBold>Name:</TextBold>
         <Text>{name}</Text>
         <TextBold>Age:</TextBold>
