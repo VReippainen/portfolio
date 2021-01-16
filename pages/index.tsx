@@ -9,6 +9,7 @@ import { getPageById } from '../utils/sectionMapper'
 import { NextSeo } from 'next-seo'
 import { MetaModel } from '../models/MetaModel'
 import { WebSiteModel } from '../models/WebSiteModel'
+import { NavBar } from '../components/navigation/NavBar'
 
 export interface Props {
   pages: Entry<PageModel>[]
@@ -39,6 +40,7 @@ export default function Home({ pages, meta }: WebSiteModel): ReactElement {
           const Page = getPageById(id)
           return Page ? <Page key={id} pageEntry={page} /> : null
         })}
+        <NavBar {...{ navUrls }} />
       </Main>
       <Footer />
     </PageContainer>

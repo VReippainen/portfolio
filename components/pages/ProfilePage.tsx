@@ -10,6 +10,6 @@ const Container = styled(SectionPadding)`
 `
 
 export function ProfilePage({ pageEntry }: PageProps): ReactElement {
-  const { sections, name } = pageEntry.fields
-  return <Container id={name}>{generateSections(sections)}</Container>
+  const { sections, id } = pageEntry.fields
+  return <Container {...{ id }}>{generateSections(sections)}</Container>
 }

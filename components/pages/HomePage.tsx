@@ -23,6 +23,6 @@ export interface PageProps {
 }
 
 export function HomePage({ pageEntry }: PageProps): ReactElement {
-  const { sections, name } = pageEntry.fields
-  return <Container id={name}>{generateSections(sections)}</Container>
+  const { sections, id } = pageEntry.fields
+  return <Container {...{ id }}>{generateSections(sections)}</Container>
 }
