@@ -6,6 +6,7 @@ import { Text } from '../../components/ui/Text'
 import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
 import Div100vh from 'react-div-100vh'
+import { MobileScreen } from '../../constants/Breakpoints'
 
 const HeroContainer = styled(Div100vh)`
   min-height: 100vh;
@@ -27,6 +28,9 @@ const TextContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   display: flex;
+  ${MobileScreen} {
+    top: 30%;
+  }
 `
 
 const Image = styled.div<{ imageUrl: string }>`
