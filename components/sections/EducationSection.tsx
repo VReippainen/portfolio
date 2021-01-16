@@ -46,7 +46,7 @@ export function EducationSectionInternal({
   creditsTotal,
 }: EducationModel): ReactElement {
   return (
-    <SectionContainer style={{ flex: 3 }} id={id}>
+    <SectionContainer id={id}>
       <SectionItem>
         <Text
           style={{

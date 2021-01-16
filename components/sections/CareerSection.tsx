@@ -47,7 +47,7 @@ export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
     return null
   }
   return (
-    <SectionContainer style={{ flex: 3 }} id={id}>
+    <SectionContainer id={id}>
       <SectionItem>
         <Text
           style={{

@@ -9,6 +9,7 @@ const Container = styled(SectionPadding)`
   display: flex;
   flex-direction: column;
   background-color: ${Colors.white};
+  min-height: 100vh;
 `
 
 export function EducationPage({ pageEntry }: PageProps): ReactElement {
