@@ -5,11 +5,7 @@ import { SectionPadding } from '../ui/SectionPadding'
 import { generateSections, PageProps } from './HomePage'
 
 const Container = styled(SectionPadding)`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   background-color: ${Colors.backgroundPrimary};
-  min-height: 100vh;
 `
 
 export function CareerPage({ pageEntry }: PageProps): ReactElement {
