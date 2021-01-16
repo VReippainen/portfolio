@@ -17,12 +17,9 @@ const SkillContainer = styled(FlexRow)`
   &:hover {
     background-color: ${Colors.lightGrey};
   }
-  padding-left: ${Spacings.S8}px;
-  padding-right: ${Spacings.S8}px;
+  padding: ${Spacings.S6}px ${Spacings.S8}px;
   ${MobileScreen} {
-    flex-basis: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: ${Spacings.S6}px 0;
   }
 `
 
