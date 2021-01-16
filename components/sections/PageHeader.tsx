@@ -28,7 +28,7 @@ export function PageHeader({ fields }: Entry<PageHeaderModel>): ReactElement {
       <Text
         style={{
           fontSize: FontSize.S20,
-          color: Colors.grey,
+          color: Colors.darkGrey,
           marginBottom: Spacings.S20,
         }}
       >
