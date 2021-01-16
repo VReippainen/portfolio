@@ -46,14 +46,10 @@ function HeroInternal({
       <Image imageUrl={backgroundImage.fields.file.url} />
       <ColorBackground />
       <TextContainer>
-        <Text
-          style={{ fontSize: FontSize.S64, color: Colors.backgroundSecondary }}
-        >
+        <Text style={{ fontSize: FontSize.S64, color: Colors.white }}>
           {title}
         </Text>
-        <Text
-          style={{ fontSize: FontSize.S32, color: Colors.backgroundSecondary }}
-        >
+        <Text style={{ fontSize: FontSize.S32, color: Colors.white }}>
           {paragraph}
         </Text>
       </TextContainer>

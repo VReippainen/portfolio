@@ -4,6 +4,6 @@ import { FontSize } from '../../constants/FontSize'
 
 export const Text = styled.p`
   font-size: ${FontSize.S16}px;
-  color: ${Colors.textPrimary};
+  color: ${Colors.darkGrey};
   margin: 0;
 `

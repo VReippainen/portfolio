@@ -8,10 +8,10 @@ const Container = styled(SectionPadding)`
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: ${Colors.white};
+  background-color: ${Colors.backgroundPrimary};
 `
 
-export function EducationPage({ pageEntry }: PageProps): ReactElement {
+export function SkillsPage({ pageEntry }: PageProps): ReactElement {
   const { sections, name } = pageEntry.fields
   return <Container id={name}>{generateSections(sections)}</Container>
 }
