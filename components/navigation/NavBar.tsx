@@ -15,19 +15,10 @@ interface NavUrl {
   name: string
 }
 
-const A = styled.a`
-  font-size: ${FontSize.S16};
-  color: ${Colors.white};
-  text-align: center;
-  text-decoration: none;
-`
-
 function NavButton({ url, name }: NavUrl): ReactElement {
   return (
-    <Link href={`?#${url}`} passHref>
-      <NavItem>
-        <A>{name}</A>
-      </NavItem>
+    <Link href={`?#${url}`}>
+      <NavItem>{name}</NavItem>
     </Link>
   )
 }
@@ -49,7 +40,11 @@ const NavBarList = styled.ul`
 const NavItem = styled.li`
   padding: 30px 15px;
   text-align: center;
-  &:hover a {
+  font-size: ${FontSize.S16}px;
+  color: ${Colors.white};
+  text-align: center;
+  text-decoration: none;
+  &:hover {
     color: ${Colors.primary};
   }
 `
