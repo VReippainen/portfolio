@@ -5,8 +5,10 @@ import { HeroModel } from '../../models/HeroModel'
 import { Text } from '../../components/ui/Text'
 import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
+import Div100vh from 'react-div-100vh'
+import { MobileScreen } from '../../constants/Breakpoints'
 
-const HeroContainer = styled.div`
+const HeroContainer = styled(Div100vh)`
   min-height: 100vh;
 `
 
@@ -20,11 +22,15 @@ const ColorBackground = styled.div`
 
 const TextContainer = styled.div`
   text-align: center;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  top: 40%;
   justify-content: center;
   flex-direction: column;
-  min-height: 100vh;
   display: flex;
+  ${MobileScreen} {
+    top: 30%;
+  }
 `
 
 const Image = styled.div<{ imageUrl: string }>`
