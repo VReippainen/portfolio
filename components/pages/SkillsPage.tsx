@@ -6,6 +6,7 @@ import { generateSections, PageProps } from './HomePage'
 
 const Container = styled(SectionPadding)`
   background-color: ${Colors.backgroundPrimary};
+  opacity: 0.9;
 `
 
 export function SkillsPage({ pageEntry }: PageProps): ReactElement {
