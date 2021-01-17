@@ -5,19 +5,11 @@ import { HeroModel } from '../../models/HeroModel'
 import { Text } from '../../components/ui/Text'
 import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
-import Div100vh from 'react-div-100vh'
 import { MobileScreen } from '../../constants/Breakpoints'
 
-const HeroContainer = styled(Div100vh)`
+const HeroContainer = styled.div`
   min-height: 100vh;
-`
-
-const ColorBackground = styled.div`
-  min-height: 100%;
-  background-color: ${Colors.primary};
-  opacity: 0.5;
-  position: absolute;
-  width: 100%;
+  background-color: ${Colors.primaryTransparent};
 `
 
 const TextContainer = styled.div`
@@ -40,6 +32,10 @@ const Image = styled.div<{ imageUrl: string }>`
   z-index: -1;
   background-image: url('${({ imageUrl }) => imageUrl}');
   background-size: cover;
+  ${MobileScreen} {
+    min-height: 1000px;
+    position: absolute;
+  }
 `
 
 function HeroInternal({
@@ -48,18 +44,19 @@ function HeroInternal({
   backgroundImage,
 }: HeroModel): ReactElement {
   return (
-    <HeroContainer>
+    <>
       <Image imageUrl={backgroundImage.fields.file.url} />
-      <ColorBackground />
-      <TextContainer>
-        <Text style={{ fontSize: FontSize.S64, color: Colors.white }}>
-          {title}
-        </Text>
-        <Text style={{ fontSize: FontSize.S32, color: Colors.white }}>
-          {paragraph}
-        </Text>
-      </TextContainer>
-    </HeroContainer>
+      <HeroContainer>
+        <TextContainer>
+          <Text style={{ fontSize: FontSize.S64, color: Colors.white }}>
+            {title}
+          </Text>
+          <Text style={{ fontSize: FontSize.S32, color: Colors.white }}>
+            {paragraph}
+          </Text>
+        </TextContainer>
+      </HeroContainer>
+    </>
   )
 }
 
