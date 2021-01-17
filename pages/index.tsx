@@ -10,8 +10,8 @@ import { NextSeo } from 'next-seo'
 import { MetaModel } from '../models/MetaModel'
 import { WebSiteModel } from '../models/WebSiteModel'
 import { NavBar } from '../components/navigation/NavBar'
-import { generateSitemap } from '../utils/generateSitemap'
-import { generateRobots } from '../utils/generateRobots'
+//import { generateSitemap } from '../utils/generateSitemap'
+//import { generateRobots } from '../utils/generateRobots'
 
 export interface Props {
   pages: Entry<PageModel>[]
@@ -20,8 +20,12 @@ export interface Props {
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   const webSite = await fetchWebsite()
-  await generateRobots(webSite.fields.url)
-  await generateSitemap(webSite.fields.url)
+  /*
+  TODO: creating robots.txt and sitemap dynamically failed. There were some issues with fs.
+  Figure out another way to create these files, next-sitemap perhaps?
+   */
+  //await generateRobots(webSite.fields.url)
+  //await generateSitemap(webSite.fields.url)
   return {
     props: webSite.fields,
   }
