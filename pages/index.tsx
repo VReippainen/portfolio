@@ -11,6 +11,7 @@ import { MetaModel } from '../models/MetaModel'
 import { WebSiteModel } from '../models/WebSiteModel'
 import { NavBar } from '../components/navigation/NavBar'
 import { generateSitemap } from '../utils/generateSitemap'
+import { generateRobots } from '../utils/generateRobots'
 
 export interface Props {
   pages: Entry<PageModel>[]
@@ -19,6 +20,7 @@ export interface Props {
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   const webSite = await fetchWebsite()
+  await generateRobots(webSite.fields.url)
   await generateSitemap(webSite.fields.url)
   return {
     props: webSite.fields,
