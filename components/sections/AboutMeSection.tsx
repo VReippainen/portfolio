@@ -45,9 +45,11 @@ export function AboutMeSection({ fields }: Entry<AboutMeModel>): ReactElement {
       <Column>
         <Title>Details</Title>
         <TextBold>Name:</TextBold>
-        <Text>{name}</Text>
+        <Text style={{ marginBottom: Spacings.S6 }}>{name}</Text>
         <TextBold>Age:</TextBold>
-        <Text>{getAge(new Date(dateOfBirth))}</Text>
+        <Text style={{ marginBottom: Spacings.S6 }}>
+          {getAge(new Date(dateOfBirth))}
+        </Text>
         <TextBold>Location</TextBold>
         <Text>{location}</Text>
       </Column>

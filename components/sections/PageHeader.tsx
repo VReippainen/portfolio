@@ -9,6 +9,7 @@ import { Spacings } from '../../constants/Spacings'
 
 const TextContainer = styled.div`
   text-align: center;
+  margin-bottom: ${Spacings.S60}px;
 `
 
 export function PageHeader({ fields }: Entry<PageHeaderModel>): ReactElement {

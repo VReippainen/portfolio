@@ -5,19 +5,12 @@ import { HeroModel } from '../../models/HeroModel'
 import { Text } from '../../components/ui/Text'
 import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
-import Div100vh from 'react-div-100vh'
 import { MobileScreen } from '../../constants/Breakpoints'
+import { Spacings } from '../../constants/Spacings'
 
-const HeroContainer = styled(Div100vh)`
+const HeroContainer = styled.div`
   min-height: 100vh;
-`
-
-const ColorBackground = styled.div`
-  min-height: 100%;
-  background-color: ${Colors.primary};
-  opacity: 0.5;
-  position: absolute;
-  width: 100%;
+  background-color: ${Colors.primaryTransparent};
 `
 
 const TextContainer = styled.div`
@@ -30,6 +23,8 @@ const TextContainer = styled.div`
   display: flex;
   ${MobileScreen} {
     top: 30%;
+    margin: 0 20px;
+    width: auto;
   }
 `
 
@@ -40,6 +35,26 @@ const Image = styled.div<{ imageUrl: string }>`
   z-index: -1;
   background-image: url('${({ imageUrl }) => imageUrl}');
   background-size: cover;
+  ${MobileScreen} {
+    min-height: 1000px;
+    position: absolute;
+  }
+`
+
+const Title = styled(Text)`
+  font-size: ${FontSize.S64}px;
+  color: ${Colors.white};
+  font-weight: bold;
+  border-bottom: 1px solid ${Colors.white};
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: ${Spacings.S8}px;
+  margin-bottom: ${Spacings.S8}px;
+`
+
+const Paragraph = styled(Text)`
+  font-size: ${FontSize.S32}px;
+  color: ${Colors.white};
 `
 
 function HeroInternal({
@@ -48,18 +63,15 @@ function HeroInternal({
   backgroundImage,
 }: HeroModel): ReactElement {
   return (
-    <HeroContainer>
+    <>
       <Image imageUrl={backgroundImage.fields.file.url} />
-      <ColorBackground />
-      <TextContainer>
-        <Text style={{ fontSize: FontSize.S64, color: Colors.white }}>
-          {title}
-        </Text>
-        <Text style={{ fontSize: FontSize.S32, color: Colors.white }}>
-          {paragraph}
-        </Text>
-      </TextContainer>
-    </HeroContainer>
+      <HeroContainer>
+        <TextContainer>
+          <Title>{title}</Title>
+          <Paragraph>{paragraph}</Paragraph>
+        </TextContainer>
+      </HeroContainer>
+    </>
   )
 }
 
