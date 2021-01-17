@@ -6,6 +6,7 @@ import { Text } from '../../components/ui/Text'
 import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
 import { MobileScreen } from '../../constants/Breakpoints'
+import { Spacings } from '../../constants/Spacings'
 
 const HeroContainer = styled.div`
   min-height: 100vh;
@@ -38,6 +39,22 @@ const Image = styled.div<{ imageUrl: string }>`
   }
 `
 
+const Title = styled(Text)`
+  font-size: ${FontSize.S64}px;
+  color: ${Colors.white};
+  font-weight: bold;
+  border-bottom: 1px solid ${Colors.white};
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: ${Spacings.S8}px;
+  margin-bottom: ${Spacings.S8}px;
+`
+
+const Paragraph = styled(Text)`
+  font-size: ${FontSize.S32}px;
+  color: ${Colors.white};
+`
+
 function HeroInternal({
   title,
   paragraph,
@@ -48,12 +65,8 @@ function HeroInternal({
       <Image imageUrl={backgroundImage.fields.file.url} />
       <HeroContainer>
         <TextContainer>
-          <Text style={{ fontSize: FontSize.S64, color: Colors.white }}>
-            {title}
-          </Text>
-          <Text style={{ fontSize: FontSize.S32, color: Colors.white }}>
-            {paragraph}
-          </Text>
+          <Title>{title}</Title>
+          <Paragraph>{paragraph}</Paragraph>
         </TextContainer>
       </HeroContainer>
     </>
