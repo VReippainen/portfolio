@@ -23,6 +23,8 @@ const TextContainer = styled.div`
   display: flex;
   ${MobileScreen} {
     top: 30%;
+    margin: 0 20px;
+    width: auto;
   }
 `
 
