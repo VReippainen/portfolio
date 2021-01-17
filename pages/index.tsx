@@ -10,6 +10,7 @@ import { NextSeo } from 'next-seo'
 import { MetaModel } from '../models/MetaModel'
 import { WebSiteModel } from '../models/WebSiteModel'
 import { NavBar } from '../components/navigation/NavBar'
+import { generateSitemap } from '../utils/generateSitemap'
 
 export interface Props {
   pages: Entry<PageModel>[]
@@ -18,6 +19,7 @@ export interface Props {
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   const webSite = await fetchWebsite()
+  await generateSitemap(webSite.fields.url)
   return {
     props: webSite.fields,
   }
