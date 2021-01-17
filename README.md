@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a static site generator (SSG), which can be used for creating porfolio website. Example website can be found on [reippainen.com](https://reippainen.com). The SSG is implemented using Next.js and Typescript, uses Contenful as its CMS and the example website itself is hosted on Netlify.
 
 ## Getting Started
 
-First, run the development server:
+Before starting, set Contentful access token, space id and the website id as environment variables, which can be found on Contenful. The easiest way to set environment variables is to modify .env.local.
 
 ```bash
-npm run dev
-# or
-yarn dev
+NEXT_PUBLIC_CONTENTFUL_SPACE_ID=EXAMPLE_SPACE_ID
+NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=EXAMPLE_ACCESS_TOKEN
+WEBSITE_ID=EXAMPLE_WEBSITE_ID
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After settings the environment variables, the development server can be started by running:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+yarn install
+yarn run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+The development server is running now on [http://localhost:3000](http://localhost:3000)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+You may also try running the server on production mode:
 
-## Learn More
+```bash
+yarn build
+yarn export
+# Serve must be installed globally
+serve -s out
+```
 
-To learn more about Next.js, take a look at the following resources:
+The server should now be running on [http://localhost:5000](http://localhost:5000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy on Netlify
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Deploying example portfolio website can be done by merging a pull request to main branch. Netlify will deploy new changes automatically after PR is accepted.
