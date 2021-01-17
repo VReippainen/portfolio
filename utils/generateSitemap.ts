@@ -11,5 +11,5 @@ export async function generateSitemap(url: string): Promise<void> {
     </url>
 </urlset>`
 
-  fs.writeFileSync('public/sitemap.xml', sitemap)
+  fs.writeFileSync('./public/sitemap.xml', sitemap)
 }

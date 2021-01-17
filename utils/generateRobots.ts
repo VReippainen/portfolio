@@ -7,5 +7,5 @@ Allow: /
   
 Sitemap: ${url}/sitemap.xml`
 
-  fs.writeFileSync('public/robots.txt', sitemap)
+  fs.writeFileSync('./public/robots.txt', sitemap)
 }
