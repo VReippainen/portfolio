@@ -26,7 +26,7 @@ function formatTechnologies(technologies: string[]): string {
     return `Technologies: ${technologies.reduce(
       (acc, curr) => acc + ` ${curr},`,
       ''
-    )}`
+    )}`.slice(0, -1)
   }
 }
 

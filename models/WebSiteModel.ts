@@ -6,4 +6,5 @@ export interface WebSiteModel {
   id: string
   pages: Entry<PageModel>[]
   meta: Entry<MetaModel>
+  url: string
 }

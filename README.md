@@ -2,7 +2,7 @@ This is a static site generator (SSG), which can be used for creating porfolio w
 
 ## Getting Started
 
-Before starting, set Contentful access token, space id and the website id as environment variables, which can be found on Contenful. The easiest way to set environment variables is to modify .env.local.
+Before starting, set Contentful access token, space id and the website id as environment variables, which can be found on Contenful. The easiest way to set environment variables is to create .env.local file (template below):
 
 ```bash
 NEXT_PUBLIC_CONTENTFUL_SPACE_ID=EXAMPLE_SPACE_ID
