@@ -20,8 +20,9 @@ export interface Props {
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   const webSite = await fetchWebsite()
-  await generateRobots(webSite.fields.url)
-  await generateSitemap(webSite.fields.url)
+  // Try, whether commenting out these would fix the build
+  //await generateRobots(webSite.fields.url)
+  //await generateSitemap(webSite.fields.url)
   return {
     props: webSite.fields,
   }
