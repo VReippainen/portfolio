@@ -31,20 +31,23 @@ function formatDateRow(startDate: string, endDate: string, ongoing: boolean) {
   return formattedRow
 }
 
-export function EducationSectionInternal({
-  id,
-  name,
-  minors,
-  startDate,
-  endDate,
-  faculty,
-  university,
-  gpa,
-  major,
-  ongoing,
-  creditsDone,
-  creditsTotal,
-}: EducationModel): ReactElement {
+export function EducationSection({
+  fields,
+}: Entry<EducationModel>): ReactElement {
+  const {
+    id,
+    name,
+    minors,
+    startDate,
+    endDate,
+    faculty,
+    university,
+    gpa,
+    major,
+    ongoing,
+    creditsDone,
+    creditsTotal,
+  } = fields
   return (
     <SectionContainer id={id}>
       <SectionItem>
@@ -71,10 +74,4 @@ export function EducationSectionInternal({
       </SectionItem>
     </SectionContainer>
   )
-}
-
-export function EducationSection({
-  fields,
-}: Entry<EducationModel>): ReactElement {
-  return <EducationSectionInternal {...fields} />
 }
