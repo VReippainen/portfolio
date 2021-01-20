@@ -57,11 +57,8 @@ const Paragraph = styled(Text)`
   color: ${Colors.white};
 `
 
-function HeroInternal({
-  title,
-  paragraph,
-  backgroundImage,
-}: HeroModel): ReactElement {
+export function Hero({ fields }: Entry<HeroModel>): ReactElement {
+  const { title, paragraph, backgroundImage } = fields
   return (
     <>
       <Image imageUrl={backgroundImage.fields.file.url} />
@@ -73,8 +70,4 @@ function HeroInternal({
       </HeroContainer>
     </>
   )
-}
-
-export function Hero({ fields }: Entry<HeroModel>): ReactElement {
-  return <HeroInternal {...fields} />
 }

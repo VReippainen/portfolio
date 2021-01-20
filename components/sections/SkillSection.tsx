@@ -22,27 +22,20 @@ const SkillContainer = styled(FlexRow)`
 
 interface StarProps {
   stars: number
+  color?: string
 }
 
 const UNICODE_STAR = '\u2605'
 
-function GreenStars({ stars }: StarProps) {
-  return (
-    <Text style={{ color: Colors.primary }}>{UNICODE_STAR.repeat(stars)}</Text>
-  )
-}
-
-function GreyStars({ stars }: StarProps) {
-  return (
-    <Text style={{ color: Colors.grey }}>{UNICODE_STAR.repeat(stars)}</Text>
-  )
+function Stars({ stars, color }: StarProps) {
+  return <Text style={{ color }}>{UNICODE_STAR.repeat(stars)}</Text>
 }
 
 function StarRow({ stars }: StarProps) {
   return (
     <FlexRow>
-      <GreenStars {...{ stars }} />
-      <GreyStars stars={5 - stars} />
+      <Stars stars={stars} color={Colors.primary} />
+      <Stars stars={5 - stars} color={Colors.grey} />
     </FlexRow>
   )
 }
