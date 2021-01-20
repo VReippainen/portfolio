@@ -8,6 +8,7 @@ Before starting, set Contentful access token, space id and the website id as env
 NEXT_PUBLIC_CONTENTFUL_SPACE_ID=EXAMPLE_SPACE_ID
 NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=EXAMPLE_ACCESS_TOKEN
 WEBSITE_ID=EXAMPLE_WEBSITE_ID
+NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID=GTM-XXXXXX
 ```
 
 After settings the environment variables, the development server can be started by running:
