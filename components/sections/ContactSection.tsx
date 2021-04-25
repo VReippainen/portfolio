@@ -44,7 +44,11 @@ export function ContactSection({ fields }: Entry<ContactModel>): ReactElement {
             <Link href={link} passHref>
               <LinkContainer key={link} as="a" target="_blank" rel="noopener">
                 {icon ? (
-                  <img src={icon.fields.file.url} alt={icon.fields.title} />
+                  <img
+                    src={icon.fields.file.url}
+                    alt={icon.fields.title}
+                    loading="lazy"
+                  />
                 ) : null}
                 <LinkText>{id}</LinkText>
               </LinkContainer>
