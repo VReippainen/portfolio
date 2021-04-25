@@ -10,6 +10,8 @@ import { Hero } from '../components/sections/Hero'
 import { SkillSection } from '../components/sections/SkillSection'
 import { ProfilePage } from '../components/pages/ProfilePage'
 import { AboutMeSection } from '../components/sections/AboutMeSection'
+import { ContactSection } from '../components/sections/ContactSection'
+import { ContactPage } from '../components/pages/ContactPage'
 
 interface SectionMap {
   [key: string]: (props: unknown) => ReactElement
@@ -22,6 +24,7 @@ const sectionMap: SectionMap = {
   pageHeader: PageHeader,
   skillSection: SkillSection,
   aboutMeSection: AboutMeSection,
+  contactSection: ContactSection,
 }
 
 const pageMap: SectionMap = {
@@ -30,6 +33,7 @@ const pageMap: SectionMap = {
   education: EducationPage,
   skills: SkillsPage,
   profile: ProfilePage,
+  contact: ContactPage,
 }
 
 export function getSectionById(id: string): (props: unknown) => ReactElement {
