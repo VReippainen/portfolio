@@ -10,7 +10,8 @@
     "deploy": "yarn build && yarn export",
     "export": "next export",
     "analyze": "ANALYZE=true yarn build",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "husky": {
     "hooks": {
@@ -18,29 +19,31 @@
     }
   },
   "dependencies": {
-    "contentful": "^8.1.5",
-    "date-fns": "^2.16.1",
-    "next": "10.1.3",
+    "contentful": "^8.3.5",
+    "date-fns": "^2.21.3",
+    "next": "10.2.2",
     "next-seo": "^4.17.0",
-    "next-sitemap": "^1.4.5",
+    "next-sitemap": "^1.6.57",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-gtm-module": "^2.0.11",
-    "styled-components": "^5.2.1",
+    "styled-components": "^5.3.0",
     "typescript": "^4.1.3"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^10.1.3",
-    "@types/node": "^14.14.14",
-    "@types/react": "^17.0.0",
+    "@next/bundle-analyzer": "^10.2.2",
+    "@types/node": "14.14.41",
+    "@types/react": "^17.0.6",
+    "@types/react-gtm-module": "^2.0.0",
     "@types/styled-components": "^5.1.7",
-    "@typescript-eslint/eslint-plugin": "^4.11.0",
-    "@typescript-eslint/parser": "^4.11.0",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
     "babel-plugin-styled-components": "^1.12.0",
-    "eslint": "^7.16.0",
+    "eslint": "^7.27.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "husky": "^4.3.6",
-    "prettier": "^2.2.1"
+    "prettier": "^2.3.0"
   }
 }

@@ -1,5 +1,5 @@
-import { Entry } from 'contentful'
 import { BaseModel } from './BaseModel'
+import { Entry } from 'contentful'
 
 export interface PageModel {
   id: string

@@ -1,11 +1,10 @@
-import { Entry } from 'contentful'
-import React, { ReactElement } from 'react'
-import { formatYear } from '../../utils/format'
-import { Text } from '../ui/Text'
-import { Spacings } from '../../constants/Spacings'
 import { EducationModel } from '../../models/EducationModel'
 import { FontSize } from '../../constants/FontSize'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
+import { Spacings } from '../../constants/Spacings'
+import { Text } from '../ui/Text'
+import { formatYear } from '../../utils/format'
+import React, { ReactElement } from 'react'
 
 function formatMinors(minors?: string[]): string {
   if (!minors || minors.length === 0) {
@@ -17,7 +16,7 @@ function formatMinors(minors?: string[]): string {
   }
 }
 
-function formatDateRow(startDate: string, endDate: string, ongoing: boolean) {
+function formatDateRow(startDate: string, endDate?: string, ongoing?: boolean) {
   let formattedRow = ''
   if (startDate) {
     formattedRow += `${formatYear(new Date(startDate))} - `
@@ -32,22 +31,19 @@ function formatDateRow(startDate: string, endDate: string, ongoing: boolean) {
 }
 
 export function EducationSection({
-  fields,
-}: Entry<EducationModel>): ReactElement {
-  const {
-    id,
-    name,
-    minors,
-    startDate,
-    endDate,
-    faculty,
-    university,
-    gpa,
-    major,
-    ongoing,
-    creditsDone,
-    creditsTotal,
-  } = fields
+  id,
+  name,
+  minors,
+  startDate,
+  endDate,
+  faculty,
+  university,
+  gpa,
+  major,
+  ongoing,
+  creditsDone,
+  creditsTotal,
+}: EducationModel): ReactElement {
   return (
     <SectionContainer id={id}>
       <SectionItem>

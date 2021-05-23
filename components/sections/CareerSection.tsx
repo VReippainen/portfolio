@@ -1,14 +1,13 @@
-import { Entry } from 'contentful'
-import React, { ReactElement } from 'react'
 import { CareerModel } from '../../models/CareerModel'
-import { formatMonthYear } from '../../utils/format'
-import { Text } from '../ui/Text'
-import { Spacings } from '../../constants/Spacings'
-import { LinkPrimary } from './LinkPrimary'
 import { FontSize } from '../../constants/FontSize'
+import { LinkPrimary } from './LinkPrimary'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
+import { Spacings } from '../../constants/Spacings'
+import { Text } from '../ui/Text'
+import { formatMonthYear } from '../../utils/format'
+import React, { Fragment, ReactElement } from 'react'
 
-function formatDateRow(startDate: string, endDate: string, current: boolean) {
+function formatDateRow(startDate: string, endDate?: string, current?: boolean) {
   if (startDate) {
     if (endDate) {
       return `${formatMonthYear(new Date(startDate))} - ${formatMonthYear(
@@ -28,23 +27,23 @@ function formatTechnologies(technologies: string[]): string {
       ''
     )}`.slice(0, -1)
   }
+  return ''
 }
 
-export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
-  const {
-    id,
-    title,
-    description,
-    technologies,
-    startDate,
-    endDate,
-    current,
-    company,
-    link,
-    hide,
-  } = fields
+export function CareerSection({
+  id,
+  title,
+  description,
+  technologies,
+  startDate,
+  endDate,
+  current,
+  company,
+  link,
+  hide,
+}: CareerModel): ReactElement {
   if (hide) {
-    return null
+    return <Fragment />
   }
   return (
     <SectionContainer id={id}>

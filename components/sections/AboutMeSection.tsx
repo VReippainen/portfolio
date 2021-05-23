@@ -1,14 +1,13 @@
-import { Entry } from 'contentful'
-import React, { ReactElement } from 'react'
-import { Text, TextBold } from '../ui/Text'
-import { SectionContainer, SectionItem } from '../ui/SectionContainer'
-import { FontSize } from '../../constants/FontSize'
-import { Colors } from '../../constants/Colors'
-import { Spacings } from '../../constants/Spacings'
-import styled from 'styled-components'
 import { AboutMeModel } from '../../models/AboutMeModel'
+import { Colors } from '../../constants/Colors'
+import { FontSize } from '../../constants/FontSize'
 import { MobileScreen } from '../../constants/Breakpoints'
+import { SectionContainer, SectionItem } from '../ui/SectionContainer'
+import { Spacings } from '../../constants/Spacings'
+import { Text, TextBold } from '../ui/Text'
 import { getAge } from '../../utils/format'
+import React, { ReactElement } from 'react'
+import styled from 'styled-components'
 
 const Title = styled(Text)`
   font-size: ${FontSize.S32}px;
@@ -31,8 +30,15 @@ const Column = styled(SectionItem)`
   }
 `
 
-export function AboutMeSection({ fields }: Entry<AboutMeModel>): ReactElement {
-  const { id, title, name, description, image, location, dateOfBirth } = fields
+export function AboutMeSection({
+  id,
+  title,
+  name,
+  description,
+  image,
+  location,
+  dateOfBirth,
+}: AboutMeModel): ReactElement {
   return (
     <SectionContainer id={id}>
       <Column>

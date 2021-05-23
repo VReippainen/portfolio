@@ -1,13 +1,12 @@
-import { Entry } from 'contentful'
-import React, { ReactElement } from 'react'
-import { Text } from '../ui/Text'
-import { SectionContainer } from '../ui/SectionContainer'
-import { SkillsModel } from '../../models/SkillsModel'
-import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
-import { Spacings } from '../../constants/Spacings'
-import { SkillModel } from '../../models/SkillModel'
 import { FlexRow } from '../ui/FlexRow'
+import { FontSize } from '../../constants/FontSize'
+import { SectionContainer } from '../ui/SectionContainer'
+import { SkillModel } from '../../models/SkillModel'
+import { SkillsModel } from '../../models/SkillsModel'
+import { Spacings } from '../../constants/Spacings'
+import { Text } from '../ui/Text'
+import React, { Fragment, ReactElement } from 'react'
 import styled from 'styled-components'
 
 const SkillContainer = styled(FlexRow)`
@@ -56,10 +55,9 @@ const Title = styled(Text)`
   margin-bottom: ${Spacings.S20}px;
 `
 
-export function SkillSection({ fields }: Entry<SkillsModel>): ReactElement {
-  const { id, title, skills } = fields
+export function SkillSection({ id, title, skills }: SkillsModel): ReactElement {
   if (skills.length === 0) {
-    return null
+    return <Fragment />
   }
   return (
     <SectionContainer style={{ flexDirection: 'column' }} id={id}>
