@@ -1,5 +1,5 @@
-import format from 'date-fns/format'
 import differenceInYears from 'date-fns/differenceInYears'
+import format from 'date-fns/format'
 
 export function formatMonthYear(date: Date): string {
   return format(date, 'M/Y')

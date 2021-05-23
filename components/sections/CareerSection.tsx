@@ -1,11 +1,11 @@
-import React, { ReactElement, Fragment } from 'react'
 import { CareerModel } from '../../models/CareerModel'
-import { formatMonthYear } from '../../utils/format'
-import { Text } from '../ui/Text'
-import { Spacings } from '../../constants/Spacings'
-import { LinkPrimary } from './LinkPrimary'
 import { FontSize } from '../../constants/FontSize'
+import { LinkPrimary } from './LinkPrimary'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
+import { Spacings } from '../../constants/Spacings'
+import { Text } from '../ui/Text'
+import { formatMonthYear } from '../../utils/format'
+import React, { Fragment, ReactElement } from 'react'
 
 function formatDateRow(startDate: string, endDate?: string, current?: boolean) {
   if (startDate) {

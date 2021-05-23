@@ -1,7 +1,7 @@
-import { ReactElement } from 'react'
-import styled from 'styled-components'
 import { NavUrl } from '../../models/NavUrl'
+import { ReactElement } from 'react'
 import Link from 'next/link'
+import styled from 'styled-components'
 
 const Nav = styled.header`
   display: flex;

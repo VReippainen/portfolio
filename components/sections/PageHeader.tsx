@@ -1,10 +1,10 @@
-import { ReactElement } from 'react'
-import styled from 'styled-components'
-import { Text } from '../ui/Text'
-import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
+import { FontSize } from '../../constants/FontSize'
 import { PageHeaderModel } from '../../models/PageHeaderModel'
+import { ReactElement } from 'react'
 import { Spacings } from '../../constants/Spacings'
+import { Text } from '../ui/Text'
+import styled from 'styled-components'
 
 const TextContainer = styled.div`
   text-align: center;

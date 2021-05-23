@@ -1,14 +1,14 @@
+import { ContactDetailModel } from '../../models/ContactDetailModel'
+import { ContactModel } from '../../models/ContactModel'
 import { Entry } from 'contentful'
-import React, { ReactElement } from 'react'
-import { Text } from '../ui/Text'
+import { FlexRow } from '../ui/FlexRow'
+import { MobileScreen } from '../../constants/Breakpoints'
 import { SectionContainer } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
-import styled from 'styled-components'
-import { MobileScreen } from '../../constants/Breakpoints'
-import { ContactModel } from '../../models/ContactModel'
-import { ContactDetailModel } from '../../models/ContactDetailModel'
-import { FlexRow } from '../ui/FlexRow'
+import { Text } from '../ui/Text'
 import Link from 'next/link'
+import React, { ReactElement } from 'react'
+import styled from 'styled-components'
 
 const LinkContainer = styled(FlexRow)`
   margin-left: ${Spacings.S20}px;

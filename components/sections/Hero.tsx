@@ -1,11 +1,11 @@
-import { ReactElement } from 'react'
-import styled from 'styled-components'
-import { HeroModel } from '../../models/HeroModel'
-import { Text } from '../../components/ui/Text'
-import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
+import { FontSize } from '../../constants/FontSize'
+import { HeroModel } from '../../models/HeroModel'
 import { MobileScreen } from '../../constants/Breakpoints'
+import { ReactElement } from 'react'
 import { Spacings } from '../../constants/Spacings'
+import { Text } from '../../components/ui/Text'
+import styled from 'styled-components'
 
 const HeroContainer = styled.div`
   min-height: 100vh;

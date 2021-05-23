@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react'
-import { FontSize } from '../../constants/FontSize'
 import { Colors } from '../../constants/Colors'
-import styled from 'styled-components'
-import Link from 'next/link'
-import { Spacings } from '../../constants/Spacings'
+import { FontSize } from '../../constants/FontSize'
 import { MobileScreen } from '../../constants/Breakpoints'
+import { Spacings } from '../../constants/Spacings'
+import Link from 'next/link'
+import React, { ReactElement } from 'react'
+import styled from 'styled-components'
 
 interface Props {
   navUrls: NavUrl[]

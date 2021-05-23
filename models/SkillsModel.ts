@@ -1,5 +1,5 @@
-import { Entry } from 'contentful'
 import { BaseModel } from './BaseModel'
+import { Entry } from 'contentful'
 import { SkillModel } from './SkillModel'
 
 export interface SkillsModel extends BaseModel {

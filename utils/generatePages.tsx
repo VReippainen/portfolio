@@ -1,12 +1,12 @@
-import { Entry } from 'contentful'
-import React, { ReactElement } from 'react'
 import { CareerPage } from '../components/pages/CareerPage'
 import { ContactPage } from '../components/pages/ContactPage'
 import { EducationPage } from '../components/pages/EducationPage'
+import { Entry } from 'contentful'
 import { HomePage } from '../components/pages/HomePage'
+import { PageModel } from '../models/PageModel'
 import { ProfilePage } from '../components/pages/ProfilePage'
 import { SkillsPage } from '../components/pages/SkillsPage'
-import { PageModel } from '../models/PageModel'
+import React, { ReactElement } from 'react'
 
 export function generatePages(pages: Entry<PageModel>[]): ReactElement[] {
   return pages.map(({ fields }: Entry<PageModel>) => (

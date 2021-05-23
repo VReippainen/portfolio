@@ -1,6 +1,6 @@
-import styled from 'styled-components'
 import { MobileScreen } from '../../constants/Breakpoints'
 import { Spacings } from '../../constants/Spacings'
+import styled from 'styled-components'
 
 const SectionItem = styled.div`
   flex: 1;

@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react'
-import { formatYear } from '../../utils/format'
-import { Text } from '../ui/Text'
-import { Spacings } from '../../constants/Spacings'
 import { EducationModel } from '../../models/EducationModel'
 import { FontSize } from '../../constants/FontSize'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
+import { Spacings } from '../../constants/Spacings'
+import { Text } from '../ui/Text'
+import { formatYear } from '../../utils/format'
+import React, { ReactElement } from 'react'
 
 function formatMinors(minors?: string[]): string {
   if (!minors || minors.length === 0) {

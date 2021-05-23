@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Entry } from 'contentful'
-import React, { ReactElement } from 'react'
 import { AboutMeSection } from '../components/sections/AboutMeSection'
+import { BaseModel } from '../models/BaseModel'
 import { CareerSection } from '../components/sections/CareerSection'
 import { ContactSection } from '../components/sections/ContactSection'
 import { EducationSection } from '../components/sections/EducationSection'
+import { Entry } from 'contentful'
 import { Hero } from '../components/sections/Hero'
 import { PageHeader } from '../components/sections/PageHeader'
 import { SkillSection } from '../components/sections/SkillSection'
-import { BaseModel } from '../models/BaseModel'
+import React, { ReactElement } from 'react'
 
 export function generateSections<T extends BaseModel>(
   sections: Entry<T>[]

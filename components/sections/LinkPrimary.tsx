@@ -1,10 +1,10 @@
+import { Colors } from '../../constants/Colors'
 import { Entry } from 'contentful'
+import { FontSize } from '../../constants/FontSize'
+import { LinkModel } from '../../models/LinkModel'
 import Link from 'next/link'
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
-import { Colors } from '../../constants/Colors'
-import { FontSize } from '../../constants/FontSize'
-import { LinkModel } from '../../models/LinkModel'
 
 const A = styled.a`
   font-size: ${FontSize.S16};

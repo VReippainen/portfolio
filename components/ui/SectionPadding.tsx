@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { MobileScreen, TabletScreen } from '../../constants/Breakpoints'
+import styled from 'styled-components'
 
 export const SectionPadding = styled.section`
   flex: 1;

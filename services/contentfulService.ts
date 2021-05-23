@@ -1,4 +1,4 @@
-import { createClient, Entry } from 'contentful'
+import { Entry, createClient } from 'contentful'
 import { WebSiteModel } from '../models/WebSiteModel'
 
 const WEBSITE_ID = process.env.WEBSITE_ID ?? ''

@@ -1,7 +1,7 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
 import { ReactElement, useEffect } from 'react'
 import TagManager from 'react-gtm-module'
+import type { AppProps } from 'next/app'
 
 const GTM_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID
 

@@ -1,3 +1,4 @@
+import { ServerStyleSheet } from 'styled-components'
 import Document, {
   DocumentContext,
   DocumentInitialProps,
@@ -7,7 +8,6 @@ import Document, {
   NextScript,
 } from 'next/document'
 import React from 'react'
-import { ServerStyleSheet } from 'styled-components'
 
 /*
 VReippainen 17.1.2021: CSS was applied after the first page load causing flickering. 
