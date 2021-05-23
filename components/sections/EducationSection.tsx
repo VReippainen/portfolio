@@ -1,4 +1,3 @@
-import { Entry } from 'contentful'
 import React, { ReactElement } from 'react'
 import { formatYear } from '../../utils/format'
 import { Text } from '../ui/Text'
@@ -32,22 +31,19 @@ function formatDateRow(startDate: string, endDate?: string, ongoing?: boolean) {
 }
 
 export function EducationSection({
-  fields,
-}: Entry<EducationModel>): ReactElement {
-  const {
-    id,
-    name,
-    minors,
-    startDate,
-    endDate,
-    faculty,
-    university,
-    gpa,
-    major,
-    ongoing,
-    creditsDone,
-    creditsTotal,
-  } = fields
+  id,
+  name,
+  minors,
+  startDate,
+  endDate,
+  faculty,
+  university,
+  gpa,
+  major,
+  ongoing,
+  creditsDone,
+  creditsTotal,
+}: EducationModel): ReactElement {
   return (
     <SectionContainer id={id}>
       <SectionItem>

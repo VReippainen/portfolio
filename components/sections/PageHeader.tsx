@@ -1,4 +1,3 @@
-import { Entry } from 'contentful'
 import { ReactElement } from 'react'
 import styled from 'styled-components'
 import { Text } from '../ui/Text'
@@ -12,8 +11,10 @@ const TextContainer = styled.div`
   margin-bottom: ${Spacings.S60}px;
 `
 
-export function PageHeader({ fields }: Entry<PageHeaderModel>): ReactElement {
-  const { title, paragraph } = fields
+export function PageHeader({
+  title,
+  paragraph,
+}: PageHeaderModel): ReactElement {
   return (
     <TextContainer>
       <Text

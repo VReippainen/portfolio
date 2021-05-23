@@ -1,4 +1,3 @@
-import { Entry } from 'contentful'
 import React, { ReactElement } from 'react'
 import { Text, TextBold } from '../ui/Text'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
@@ -31,8 +30,15 @@ const Column = styled(SectionItem)`
   }
 `
 
-export function AboutMeSection({ fields }: Entry<AboutMeModel>): ReactElement {
-  const { id, title, name, description, image, location, dateOfBirth } = fields
+export function AboutMeSection({
+  id,
+  title,
+  name,
+  description,
+  image,
+  location,
+  dateOfBirth,
+}: AboutMeModel): ReactElement {
   return (
     <SectionContainer id={id}>
       <Column>

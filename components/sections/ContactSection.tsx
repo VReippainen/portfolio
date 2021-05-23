@@ -33,8 +33,10 @@ const LinkText = styled(Text)`
   margin-right: ${Spacings.S8}px;
 `
 
-export function ContactSection({ fields }: Entry<ContactModel>): ReactElement {
-  const { id, contactLinks } = fields
+export function ContactSection({
+  id,
+  contactLinks,
+}: ContactModel): ReactElement {
   return (
     <SectionContainer {...{ id }}>
       <Links>

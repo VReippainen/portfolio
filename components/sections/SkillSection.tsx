@@ -1,4 +1,3 @@
-import { Entry } from 'contentful'
 import React, { ReactElement, Fragment } from 'react'
 import { Text } from '../ui/Text'
 import { SectionContainer } from '../ui/SectionContainer'
@@ -56,8 +55,7 @@ const Title = styled(Text)`
   margin-bottom: ${Spacings.S20}px;
 `
 
-export function SkillSection({ fields }: Entry<SkillsModel>): ReactElement {
-  const { id, title, skills } = fields
+export function SkillSection({ id, title, skills }: SkillsModel): ReactElement {
   if (skills.length === 0) {
     return <Fragment />
   }

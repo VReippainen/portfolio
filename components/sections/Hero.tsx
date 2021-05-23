@@ -1,4 +1,3 @@
-import { Entry } from 'contentful'
 import { ReactElement } from 'react'
 import styled from 'styled-components'
 import { HeroModel } from '../../models/HeroModel'
@@ -57,8 +56,11 @@ const Paragraph = styled(Text)`
   color: ${Colors.white};
 `
 
-export function Hero({ fields }: Entry<HeroModel>): ReactElement {
-  const { title, paragraph, backgroundImage } = fields
+export function Hero({
+  title,
+  paragraph,
+  backgroundImage,
+}: HeroModel): ReactElement {
   return (
     <>
       <Image imageUrl={backgroundImage.fields.file.url} />

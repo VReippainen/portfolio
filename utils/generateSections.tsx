@@ -18,31 +18,32 @@ export function generateSections<T extends BaseModel>(
   ))
 }
 
-function GenericSection<T extends BaseModel>(
-  props: Entry<T>
-): ReactElement | null {
-  switch (props.sys.contentType.sys.id) {
+function GenericSection<T extends BaseModel>({
+  fields,
+  sys,
+}: Entry<T>): ReactElement | null {
+  switch (sys.contentType.sys.id) {
     case 'hero':
       // @ts-ignore
-      return <Hero {...props} />
+      return <Hero {...fields} />
     case 'section':
       // @ts-ignore
-      return <EducationSection {...props} />
+      return <EducationSection {...fields} />
     case 'careerSection':
       // @ts-ignore
-      return <CareerSection {...props} />
+      return <CareerSection {...fields} />
     case 'pageHeader':
       // @ts-ignore
-      return <PageHeader {...props} />
+      return <PageHeader {...fields} />
     case 'skillSection':
       // @ts-ignore
-      return <SkillSection {...props} />
+      return <SkillSection {...fields} />
     case 'aboutMeSection':
       // @ts-ignore
-      return <AboutMeSection {...props} />
+      return <AboutMeSection {...fields} />
     case 'contactSection':
       // @ts-ignore
-      return <ContactSection {...props} />
+      return <ContactSection {...fields} />
     default:
       return null
   }

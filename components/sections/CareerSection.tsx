@@ -1,4 +1,3 @@
-import { Entry } from 'contentful'
 import React, { ReactElement, Fragment } from 'react'
 import { CareerModel } from '../../models/CareerModel'
 import { formatMonthYear } from '../../utils/format'
@@ -31,19 +30,18 @@ function formatTechnologies(technologies: string[]): string {
   return ''
 }
 
-export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
-  const {
-    id,
-    title,
-    description,
-    technologies,
-    startDate,
-    endDate,
-    current,
-    company,
-    link,
-    hide,
-  } = fields
+export function CareerSection({
+  id,
+  title,
+  description,
+  technologies,
+  startDate,
+  endDate,
+  current,
+  company,
+  link,
+  hide,
+}: CareerModel): ReactElement {
   if (hide) {
     return <Fragment />
   }
