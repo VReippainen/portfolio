@@ -39,6 +39,7 @@ export function AboutMeSection({
   location,
   dateOfBirth,
 }: AboutMeModel): ReactElement {
+  const a = 2
   return (
     <SectionContainer id={id}>
       <Column>
