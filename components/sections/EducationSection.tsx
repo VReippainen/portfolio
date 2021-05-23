@@ -17,7 +17,7 @@ function formatMinors(minors?: string[]): string {
   }
 }
 
-function formatDateRow(startDate: string, endDate: string, ongoing: boolean) {
+function formatDateRow(startDate: string, endDate?: string, ongoing?: boolean) {
   let formattedRow = ''
   if (startDate) {
     formattedRow += `${formatYear(new Date(startDate))} - `

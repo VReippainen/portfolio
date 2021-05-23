@@ -1,5 +1,5 @@
 import { Entry } from 'contentful'
-import React, { ReactElement } from 'react'
+import React, { ReactElement, Fragment } from 'react'
 import { Text } from '../ui/Text'
 import { SectionContainer } from '../ui/SectionContainer'
 import { SkillsModel } from '../../models/SkillsModel'
@@ -59,7 +59,7 @@ const Title = styled(Text)`
 export function SkillSection({ fields }: Entry<SkillsModel>): ReactElement {
   const { id, title, skills } = fields
   if (skills.length === 0) {
-    return null
+    return <Fragment />
   }
   return (
     <SectionContainer style={{ flexDirection: 'column' }} id={id}>

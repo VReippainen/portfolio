@@ -1,5 +1,5 @@
 import { Entry } from 'contentful'
-import React, { ReactElement } from 'react'
+import React, { ReactElement, Fragment } from 'react'
 import { CareerModel } from '../../models/CareerModel'
 import { formatMonthYear } from '../../utils/format'
 import { Text } from '../ui/Text'
@@ -8,7 +8,7 @@ import { LinkPrimary } from './LinkPrimary'
 import { FontSize } from '../../constants/FontSize'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 
-function formatDateRow(startDate: string, endDate: string, current: boolean) {
+function formatDateRow(startDate: string, endDate?: string, current?: boolean) {
   if (startDate) {
     if (endDate) {
       return `${formatMonthYear(new Date(startDate))} - ${formatMonthYear(
@@ -28,6 +28,7 @@ function formatTechnologies(technologies: string[]): string {
       ''
     )}`.slice(0, -1)
   }
+  return ''
 }
 
 export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
@@ -44,7 +45,7 @@ export function CareerSection({ fields }: Entry<CareerModel>): ReactElement {
     hide,
   } = fields
   if (hide) {
-    return null
+    return <Fragment />
   }
   return (
     <SectionContainer id={id}>
