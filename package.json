@@ -17,19 +17,19 @@
   "dependencies": {
     "contentful": "^9.1.29",
     "date-fns": "^2.28.0",
-    "next": "10.2.2",
+    "next": "12.1.6",
     "next-seo": "^5.4.0",
     "next-sitemap": "^2.5.22",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "react-gtm-module": "^2.0.11",
     "styled-components": "^5.3.5",
     "typescript": "^4.6.4"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.1.6",
-    "@types/node": "14.14.41",
-    "@types/react": "^17.0.6",
+    "@types/node": "17.0.35",
+    "@types/react": "^18.0.9",
     "@types/react-gtm-module": "^2.0.1",
     "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
@@ -39,7 +39,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.1",
     "prettier": "^2.6.2"
   },
   "packageManager": "yarn@3.2.1"
