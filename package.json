@@ -11,12 +11,8 @@
     "export": "next export",
     "analyze": "ANALYZE=true yarn build",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
-    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "contentful": "^9.1.29",
@@ -43,7 +39,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
-    "husky": "^4.3.6",
+    "husky": "^8.0.0",
     "prettier": "^2.6.2"
   },
   "packageManager": "yarn@3.2.1"
