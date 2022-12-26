@@ -6,18 +6,16 @@ import Link from 'next/link'
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
 
-const A = styled.a`
+const StyledLink = styled(Link)`
   font-size: ${FontSize.S16};
   color: ${Colors.primary};
 `
 
 function LinkPrimaryInternal({ url, title }: LinkModel): ReactElement {
   return (
-    <Link href={url} passHref>
-      <A target="_blank" rel="noopener">
-        {title}
-      </A>
-    </Link>
+    <StyledLink href={url} passHref target="_blank" rel="noopener">
+      {title}
+    </StyledLink>
   )
 }
 

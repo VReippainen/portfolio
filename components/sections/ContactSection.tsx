@@ -6,14 +6,17 @@ import { MobileScreen } from '../../constants/Breakpoints'
 import { SectionContainer } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
 
-const LinkContainer = styled(FlexRow)`
+const StyledLink = styled(Link)`
   margin-left: ${Spacings.S20}px;
   margin-bottom: ${Spacings.S10}px;
   text-decoration: none;
+  flex-direction: row;
+  display: flex;
   &:hover {
     opacity: 0.7;
   }
@@ -43,18 +46,24 @@ export function ContactSection({
         {contactLinks.map(({ fields }: Entry<ContactDetailModel>) => {
           const { link, icon, id } = fields
           return (
-            <Link href={link} passHref>
-              <LinkContainer key={link} as="a" target="_blank" rel="noopener">
-                {icon ? (
-                  <img
-                    src={icon.fields.file.url}
-                    alt={icon.fields.title}
-                    loading="lazy"
-                  />
-                ) : null}
-                <LinkText>{id}</LinkText>
-              </LinkContainer>
-            </Link>
+            <StyledLink
+              href={link}
+              passHref
+              key={link}
+              target="_blank"
+              rel="noopener"
+            >
+              {icon ? (
+                <Image
+                  src={icon.fields.file.url}
+                  alt={icon.fields.title}
+                  loading="lazy"
+                  width={24}
+                  height={24}
+                />
+              ) : null}
+              <LinkText>{id}</LinkText>
+            </StyledLink>
           )
         })}
       </Links>
