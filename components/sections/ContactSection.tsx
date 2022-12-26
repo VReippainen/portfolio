@@ -43,7 +43,7 @@ export function ContactSection({
         {contactLinks.map(({ fields }: Entry<ContactDetailModel>) => {
           const { link, icon, id } = fields
           return (
-            <Link href={link} passHref>
+            <Link href={link} passHref key={link}>
               <LinkContainer key={link} as="a" target="_blank" rel="noopener">
                 {icon ? (
                   <img
