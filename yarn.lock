@@ -248,12 +248,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^12.3.4":
-  version: 12.3.4
-  resolution: "@next/eslint-plugin-next@npm:12.3.4"
+"@next/eslint-plugin-next@npm:^13.1.1":
+  version: 13.1.1
+  resolution: "@next/eslint-plugin-next@npm:13.1.1"
   dependencies:
     glob: 7.1.7
-  checksum: e4ae97062f3efe8f70904cf0da296ab501a2924423273352d01b18d8ffff1eb2e9a65c47dd6f9cfa0d696eada272486a3f519b2786918d0a9ab735b93f5ce4b3
+  checksum: 27e49ef988db3203d494930ad1fcdc270761a61a41e6925c0eadf1e2b1ebd6648722a3aaec7f0c0266eea8771797e06d52f041d33c93d21ba3b361ffe696c36c
   languageName: node
   linkType: hard
 
@@ -2029,7 +2029,7 @@ __metadata:
   resolution: "portfolio@workspace:."
   dependencies:
     "@next/bundle-analyzer": ^12.3.4
-    "@next/eslint-plugin-next": ^12.3.4
+    "@next/eslint-plugin-next": ^13.1.1
     "@types/node": 18.11.17
     "@types/react": ^18.0.26
     "@types/react-gtm-module": ^2.0.1
