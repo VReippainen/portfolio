@@ -153,10 +153,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@corex/deepmerge@npm:^2.6.148":
-  version: 2.6.148
-  resolution: "@corex/deepmerge@npm:2.6.148"
-  checksum: b80b6b3e408901151de26e27b519a43cda1771a81e5390ff10cd6b47add0139bb315ca44112ff076d68ac887d7cfe237c9fb33868efb04839c4afb7c38864385
+"@corex/deepmerge@npm:^4.0.29":
+  version: 4.0.29
+  resolution: "@corex/deepmerge@npm:4.0.29"
+  checksum: 78626fd29cb9cbd2953ce5a06f963132c9b4837bb76397982d255131533b61c3ef447f0d295f300aa6b2c3ead182a6fe2e4763181e06a2124df28c08205de1d2
   languageName: node
   linkType: hard
 
@@ -435,10 +435,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:17.0.45":
-  version: 17.0.45
-  resolution: "@types/node@npm:17.0.45"
-  checksum: aa04366b9103b7d6cfd6b2ef64182e0eaa7d4462c3f817618486ea0422984c51fc69fd0d436eae6c9e696ddfdbec9ccaa27a917f7c2e8c75c5d57827fe3d95e8
+"@types/node@npm:18.11.17":
+  version: 18.11.17
+  resolution: "@types/node@npm:18.11.17"
+  checksum: 1933afd068d5c75c068c6c4df6d10edb3b0b2bb6503d544e2f0496ac007c90596e6a5e284a8ef032451bc16f871b7e46719d7d2bea60e9b25d13a77d52161cac
   languageName: node
   linkType: hard
 
@@ -1777,10 +1777,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.2.6":
-  version: 1.2.6
-  resolution: "minimist@npm:1.2.6"
-  checksum: d15428cd1e11eb14e1233bcfb88ae07ed7a147de251441d61158619dfb32c4d7e9061d09cab4825fdee18ecd6fce323228c8c47b5ba7cd20af378ca4048fb3fb
+"minimist@npm:^1.2.7":
+  version: 1.2.7
+  resolution: "minimist@npm:1.2.7"
+  checksum: 7346574a1038ca23c32e02252f603801f09384dd1d78b69a943a4e8c2c28730b80e96193882d3d3b22a063445f460e48316b29b8a25addca2d7e5e8f75478bec
   languageName: node
   linkType: hard
 
@@ -1825,17 +1825,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-sitemap@npm:^2.5.28":
-  version: 2.5.28
-  resolution: "next-sitemap@npm:2.5.28"
+"next-sitemap@npm:^3.1.43":
+  version: 3.1.43
+  resolution: "next-sitemap@npm:3.1.43"
   dependencies:
-    "@corex/deepmerge": ^2.6.148
-    minimist: ^1.2.6
+    "@corex/deepmerge": ^4.0.29
+    minimist: ^1.2.7
   peerDependencies:
+    "@next/env": "*"
     next: "*"
   bin:
-    next-sitemap: bin/next-sitemap
-  checksum: 8d60a645df3e67da68a649bec0e839f4308124286456f051513ef74103bf6914ab370ebb2b57ff79db1f685988b6c35053fd6679324edd9a9426ca9f7d1c84bd
+    next-sitemap: bin/next-sitemap.mjs
+    next-sitemap-cjs: bin/next-sitemap.cjs
+  checksum: 70630056b77bf570053614919ab8a8313f439679d7a8f27976ed51be913c121ff157114112f7e99d0617f82c5e32b88e7eeb505bab0b46b704bd4afb2b0195ef
   languageName: node
   linkType: hard
 
@@ -2028,7 +2030,7 @@ __metadata:
   dependencies:
     "@next/bundle-analyzer": ^12.3.4
     "@next/eslint-plugin-next": ^12.3.4
-    "@types/node": 17.0.45
+    "@types/node": 18.11.17
     "@types/react": ^18.0.26
     "@types/react-gtm-module": ^2.0.1
     "@types/styled-components": ^5.1.26
@@ -2043,7 +2045,7 @@ __metadata:
     husky: ^8.0.2
     next: 13.1.1
     next-seo: ^5.15.0
-    next-sitemap: ^2.5.28
+    next-sitemap: ^3.1.43
     prettier: ^2.8.1
     react: 18.2.0
     react-dom: 18.2.0
