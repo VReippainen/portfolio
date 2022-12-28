@@ -6,7 +6,7 @@ import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text, TextBold } from '../ui/Text'
 import { getAge } from '../../utils/format'
-import React, { ReactElement } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const Title = styled(Text)`
@@ -38,7 +38,7 @@ export function AboutMeSection({
   image,
   location,
   dateOfBirth,
-}: AboutMeModel): ReactElement {
+}: AboutMeModel): JSX.Element {
   return (
     <SectionContainer id={id}>
       <Column>

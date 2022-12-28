@@ -6,7 +6,7 @@ import { SkillModel } from '../../models/SkillModel'
 import { SkillsModel } from '../../models/SkillsModel'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
-import React, { Fragment, ReactElement } from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 const SkillContainer = styled(FlexRow)`
@@ -55,7 +55,7 @@ const Title = styled(Text)`
   margin-bottom: ${Spacings.S20}px;
 `
 
-export function SkillSection({ id, title, skills }: SkillsModel): ReactElement {
+export function SkillSection({ id, title, skills }: SkillsModel): JSX.Element {
   if (skills.length === 0) {
     return <Fragment />
   }

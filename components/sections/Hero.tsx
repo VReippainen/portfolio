@@ -1,8 +1,8 @@
 import { Colors } from '../../constants/Colors'
 import { FontSize } from '../../constants/FontSize'
+import { Fragment } from 'react'
 import { HeroModel } from '../../models/HeroModel'
 import { MobileScreen } from '../../constants/Breakpoints'
-import { ReactElement } from 'react'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../../components/ui/Text'
 import styled from 'styled-components'
@@ -22,8 +22,8 @@ const TextContainer = styled.div`
   display: flex;
   ${MobileScreen} {
     top: 30%;
-    margin: 0 20px;
-    width: auto;
+    padding: 0 ${Spacings.S20}px;
+    width: calc(100% - ${2 * Spacings.S20}px);
   }
 `
 
@@ -49,6 +49,10 @@ const Title = styled(Text)`
   margin-right: auto;
   padding-bottom: ${Spacings.S8}px;
   margin-bottom: ${Spacings.S8}px;
+  ${MobileScreen} {
+    font-size: ${FontSize.S52}px;
+    word-break: break-word;
+  }
 `
 
 const Paragraph = styled(Text)`
@@ -60,9 +64,9 @@ export function Hero({
   title,
   paragraph,
   backgroundImage,
-}: HeroModel): ReactElement {
+}: HeroModel): JSX.Element {
   return (
-    <>
+    <Fragment>
       <Image imageUrl={backgroundImage.fields.file.url} />
       <HeroContainer>
         <TextContainer>
@@ -70,6 +74,6 @@ export function Hero({
           <Paragraph>{paragraph}</Paragraph>
         </TextContainer>
       </HeroContainer>
-    </>
+    </Fragment>
   )
 }

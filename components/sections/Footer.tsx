@@ -1,6 +1,6 @@
-import { Fragment, ReactElement } from 'react'
+import { Fragment } from 'react'
 
-export function Footer(): ReactElement {
+export function Footer(): JSX.Element {
   // Not implemented yet
   return <Fragment />
 }

@@ -4,7 +4,7 @@ import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
 import { formatYear } from '../../utils/format'
-import React, { ReactElement } from 'react'
+import React from 'react'
 
 function formatMinors(minors?: string[]): string {
   if (!minors || minors.length === 0) {
@@ -43,7 +43,7 @@ export function EducationSection({
   ongoing,
   creditsDone,
   creditsTotal,
-}: EducationModel): ReactElement {
+}: EducationModel): JSX.Element {
   return (
     <SectionContainer id={id}>
       <SectionItem>
