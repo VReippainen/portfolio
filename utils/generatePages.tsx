@@ -6,15 +6,15 @@ import { HomePage } from '../components/pages/HomePage'
 import { PageModel } from '../models/PageModel'
 import { ProfilePage } from '../components/pages/ProfilePage'
 import { SkillsPage } from '../components/pages/SkillsPage'
-import React, { ReactElement } from 'react'
+import React from 'react'
 
-export function generatePages(pages: Entry<PageModel>[]): ReactElement[] {
+export function generatePages(pages: Entry<PageModel>[]): JSX.Element[] {
   return pages.map(({ fields }: Entry<PageModel>) => (
     <GenericPage {...fields} key={fields.id} />
   ))
 }
 
-function GenericPage(fields: PageModel): ReactElement | null {
+function GenericPage(fields: PageModel): JSX.Element | null {
   switch (fields.id) {
     case 'home':
       return <HomePage {...fields} />

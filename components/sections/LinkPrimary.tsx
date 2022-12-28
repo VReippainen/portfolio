@@ -3,7 +3,7 @@ import { Entry } from 'contentful'
 import { FontSize } from '../../constants/FontSize'
 import { LinkModel } from '../../models/LinkModel'
 import Link from 'next/link'
-import React, { ReactElement } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const StyledLink = styled(Link)`
@@ -11,7 +11,7 @@ const StyledLink = styled(Link)`
   color: ${Colors.primary};
 `
 
-function LinkPrimaryInternal({ url, title }: LinkModel): ReactElement {
+function LinkPrimaryInternal({ url, title }: LinkModel): JSX.Element {
   return (
     <StyledLink href={url} passHref target="_blank" rel="noopener">
       {title}
@@ -19,6 +19,6 @@ function LinkPrimaryInternal({ url, title }: LinkModel): ReactElement {
   )
 }
 
-export function LinkPrimary({ fields }: Entry<LinkModel>): ReactElement {
+export function LinkPrimary({ fields }: Entry<LinkModel>): JSX.Element {
   return <LinkPrimaryInternal {...fields} />
 }

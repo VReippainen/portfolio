@@ -5,7 +5,7 @@ import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
 import { formatMonthYear } from '../../utils/format'
-import React, { Fragment, ReactElement } from 'react'
+import React, { Fragment } from 'react'
 
 function formatDateRow(startDate: string, endDate?: string, current?: boolean) {
   if (startDate) {
@@ -41,7 +41,7 @@ export function CareerSection({
   company,
   link,
   hide,
-}: CareerModel): ReactElement {
+}: CareerModel): JSX.Element {
   if (hide) {
     return <Fragment />
   }

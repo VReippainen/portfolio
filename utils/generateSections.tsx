@@ -8,11 +8,11 @@ import { Entry } from 'contentful'
 import { Hero } from '../components/sections/Hero'
 import { PageHeader } from '../components/sections/PageHeader'
 import { SkillSection } from '../components/sections/SkillSection'
-import React, { ReactElement } from 'react'
+import React from 'react'
 
 export function generateSections<T extends BaseModel>(
   sections: Entry<T>[]
-): ReactElement[] {
+): JSX.Element[] {
   return sections.map((section: Entry<T>) => (
     <GenericSection {...section} key={section.fields.id} />
   ))
@@ -21,7 +21,7 @@ export function generateSections<T extends BaseModel>(
 function GenericSection<T extends BaseModel>({
   fields,
   sys,
-}: Entry<T>): ReactElement | null {
+}: Entry<T>): JSX.Element | null {
   switch (sys.contentType.sys.id) {
     case 'hero':
       // @ts-ignore

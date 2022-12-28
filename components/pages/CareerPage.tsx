@@ -2,7 +2,7 @@ import { Colors } from '../../constants/Colors'
 import { PageModel } from '../../models/PageModel'
 import { SectionPadding } from '../ui/SectionPadding'
 import { generateSections } from '../../utils/generateSections'
-import React, { ReactElement } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled(SectionPadding)`
@@ -10,6 +10,6 @@ const Container = styled(SectionPadding)`
   opacity: 0.9;
 `
 
-export function CareerPage({ sections, id }: PageModel): ReactElement {
+export function CareerPage({ sections, id }: PageModel): JSX.Element {
   return <Container {...{ id }}>{generateSections(sections)}</Container>
 }
