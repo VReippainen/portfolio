@@ -8,7 +8,7 @@ import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { ReactElement } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const StyledLink = styled(Link)`
@@ -39,33 +39,30 @@ const LinkText = styled(Text)`
 export function ContactSection({
   id,
   contactLinks,
-}: ContactModel): ReactElement {
+}: ContactModel): JSX.Element {
   return (
     <SectionContainer {...{ id }}>
       <Links>
-        {contactLinks.map(({ fields }: Entry<ContactDetailModel>) => {
-          const { link, icon, id } = fields
-          return (
-            <StyledLink
-              href={link}
-              passHref
-              key={link}
-              target="_blank"
-              rel="noopener"
-            >
-              {icon ? (
-                <Image
-                  src={icon.fields.file.url}
-                  alt={icon.fields.title}
-                  loading="lazy"
-                  width={24}
-                  height={24}
-                />
-              ) : null}
-              <LinkText>{id}</LinkText>
-            </StyledLink>
-          )
-        })}
+        {contactLinks.map(({ fields }: Entry<ContactDetailModel>) => (
+          <StyledLink
+            href={fields.link}
+            passHref
+            key={fields.link}
+            target="_blank"
+            rel="noopener"
+          >
+            {fields.icon ? (
+              <Image
+                src={fields.icon.fields.file.url}
+                alt={fields.icon.fields.title}
+                loading="lazy"
+                width={24}
+                height={24}
+              />
+            ) : null}
+            <LinkText>{fields.id}</LinkText>
+          </StyledLink>
+        ))}
       </Links>
     </SectionContainer>
   )

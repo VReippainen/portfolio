@@ -1,7 +1,6 @@
 import { Colors } from '../../constants/Colors'
 import { FontSize } from '../../constants/FontSize'
 import { PageHeaderModel } from '../../models/PageHeaderModel'
-import { ReactElement } from 'react'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
 import styled from 'styled-components'
@@ -11,10 +10,7 @@ const TextContainer = styled.div`
   margin-bottom: ${Spacings.S60}px;
 `
 
-export function PageHeader({
-  title,
-  paragraph,
-}: PageHeaderModel): ReactElement {
+export function PageHeader({ title, paragraph }: PageHeaderModel): JSX.Element {
   return (
     <TextContainer>
       <Text

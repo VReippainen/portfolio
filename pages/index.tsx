@@ -8,7 +8,7 @@ import { PageModel } from '../models/PageModel'
 import { WebSiteModel } from '../models/WebSiteModel'
 import { fetchWebsite } from '../services/contentfulService'
 import { generatePages } from '../utils/generatePages'
-import React, { ReactElement } from 'react'
+import React from 'react'
 
 export interface Props {
   pages: Entry<PageModel>[]
@@ -16,22 +16,24 @@ export interface Props {
 }
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
-  const webSite = await fetchWebsite()
+  const { fields } = await fetchWebsite()
   return {
-    props: webSite.fields,
+    props: fields,
   }
 }
 
-export default function Home({ pages, meta }: WebSiteModel): ReactElement {
-  const navUrls = pages.map((p) => {
-    return { url: p.fields.id, name: p.fields.name }
-  })
+export default function Home({ pages, meta }: WebSiteModel): JSX.Element {
   return (
     <div>
       <NextSeo {...meta.fields} />
       <div>
         {generatePages(pages)}
-        <NavBar {...{ navUrls }} />
+        <NavBar
+          navUrls={pages.map(({ fields }) => ({
+            url: fields.id,
+            name: fields.name,
+          }))}
+        />
       </div>
       <Footer />
     </div>

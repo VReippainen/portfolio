@@ -1,7 +1,7 @@
 import { PageModel } from '../../models/PageModel'
 import { generateSections } from '../../utils/generateSections'
-import React, { ReactElement } from 'react'
+import React from 'react'
 
-export function HomePage({ id, sections }: PageModel): ReactElement {
+export function HomePage({ id, sections }: PageModel): JSX.Element {
   return <section {...{ id }}>{generateSections(sections)}</section>
 }
