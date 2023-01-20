@@ -63,9 +63,11 @@ export function SkillSection({ id, title, skills }: SkillsModel): JSX.Element {
     <SectionContainer style={{ flexDirection: 'column' }} id={id}>
       <Title>{title}</Title>
       <FlexRow style={{ flex: 2, flexWrap: 'wrap' }}>
-        {skills.map(({ fields }) => (
-          <Skill {...fields} key={fields.id} />
-        ))}
+        {skills
+          .sort((a, b) => b.fields.stars - a.fields.stars)
+          .map(({ fields }) => (
+            <Skill {...fields} key={fields.id} />
+          ))}
       </FlexRow>
     </SectionContainer>
   )
