@@ -15,10 +15,10 @@ const Title = styled(Text)`
   margin-bottom: ${Spacings.S20}px;
 `
 
-const Image = styled.div<{ imageUrl: string }>`
+const Image = styled.div<{ imageurl: string }>`
   width: 200px;
   height: 200px;
-  background-image: url('${({ imageUrl }) => imageUrl}');
+  background-image: url('${({ imageurl }) => imageurl}');
   background-size: cover;
   margin: 0 auto;
   border-radius: 50%;
@@ -46,7 +46,7 @@ export function AboutMeSection({
         <Text>{description}</Text>
       </Column>
       <Column>
-        <Image imageUrl={image.fields.file.url} />
+        <Image imageurl={image.fields.file.url} />
       </Column>
       <Column>
         <Title>Details</Title>
