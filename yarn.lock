@@ -1629,14 +1629,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-seo@npm:^5.15.0":
-  version: 5.15.0
-  resolution: "next-seo@npm:5.15.0"
+"next-seo@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "next-seo@npm:6.5.0"
   peerDependencies:
     next: ^8.1.1-canary.54 || >=9.0.0
     react: ">=16.0.0"
     react-dom: ">=16.0.0"
-  checksum: 05b0769d9c9abcc6a0179e5d724e87b1a3a7591a9c2caa4ef5b791769fcf868cb97fbcd90264106101cf7fbc073b0375ab90026aa519d2e899fbabea12cafbfb
+  checksum: 744e49cae31debc5117f35132b6929edd68b3469eed238fbd8d4888cd22a32a67e780688265311d27311936d4d9dab5c1408536ad87c73e4c293701e5213130c
   languageName: node
   linkType: hard
 
@@ -1847,7 +1847,7 @@ __metadata:
     eslint-plugin-sort-imports-es6-autofix: ^0.6.0
     husky: ^8.0.3
     next: 13.5.6
-    next-seo: ^5.15.0
+    next-seo: ^6.5.0
     next-sitemap: ^4.2.3
     prettier: ^3.2.5
     react: 18.2.0
