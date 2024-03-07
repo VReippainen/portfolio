@@ -27,12 +27,12 @@ const TextContainer = styled.div`
   }
 `
 
-const Image = styled.div<{ imageUrl: string }>`
+const Image = styled.div<{ imageurl: string }>`
   min-height: 100%;
   width: 100%;
   position: fixed;
   z-index: -1;
-  background-image: url('${({ imageUrl }) => imageUrl}');
+  background-image: url('${({ imageurl }) => imageurl}');
   background-size: cover;
   ${MobileScreen} {
     min-height: 1000px;
@@ -67,7 +67,7 @@ export function Hero({
 }: HeroModel): JSX.Element {
   return (
     <Fragment>
-      <Image imageUrl={backgroundImage.fields.file.url} />
+      <Image imageurl={backgroundImage.fields.file.url} />
       <HeroContainer>
         <TextContainer>
           <Title>{title}</Title>
