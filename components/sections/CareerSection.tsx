@@ -4,7 +4,7 @@ import { LinkPrimary } from './LinkPrimary'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
-import { formatMonthYear } from '../../utils/format'
+import { formatMonthYear } from '../../utils/formatMonthYear'
 import React, { Fragment, type JSX } from 'react'
 
 function formatDateRow(startDate: string, endDate?: string, current?: boolean) {

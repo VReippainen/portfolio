@@ -3,7 +3,7 @@ import { FontSize } from '../../constants/FontSize'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
-import { formatYear } from '../../utils/format'
+import { formatYear } from '../../utils/formatYear'
 import React, { type JSX } from 'react'
 
 function formatMinors(minors?: string[]): string {

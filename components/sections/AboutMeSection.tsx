@@ -5,7 +5,7 @@ import { MobileScreen } from '../../constants/Breakpoints'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text, TextBold } from '../ui/Text'
-import { getAge } from '../../utils/format'
+import { getAge } from '../../utils/getAge'
 import React, { type JSX } from 'react'
 import styled from 'styled-components'
 
