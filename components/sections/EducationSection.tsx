@@ -3,8 +3,8 @@ import { FontSize } from '../../constants/FontSize'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
-import { formatYear } from '../../utils/format'
-import React from 'react'
+import { formatYear } from '../../utils/formatYear'
+import React, { type JSX } from 'react'
 
 function formatMinors(minors?: string[]): string {
   if (!minors || minors.length === 0) {
@@ -64,9 +64,11 @@ export function EducationSection({
         </Text>
         {ongoing && creditsDone && creditsTotal ? (
           <Text>{`Credits done: ${creditsDone}/${creditsTotal} cr.`}</Text>
-        ) : null}
+        ) : (
+          <></>
+        )}
         <Text>{`${formatMinors(minors)}`}</Text>
-        {gpa ? <Text>{`GPA: ${gpa}`}</Text> : null}
+        {gpa ? <Text>{`GPA: ${gpa}`}</Text> : <></>}
       </SectionItem>
     </SectionContainer>
   )

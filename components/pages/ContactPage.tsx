@@ -2,11 +2,12 @@ import { Colors } from '../../constants/Colors'
 import { PageModel } from '../../models/PageModel'
 import { SectionPadding } from '../ui/SectionPadding'
 import { generateSections } from '../../utils/generateSections'
-import React from 'react'
+import React, { type JSX } from 'react'
 import styled from 'styled-components'
 
 const Container = styled(SectionPadding)`
-  background-color: ${Colors.white};
+  background-color: ${Colors.backgroundPrimary};
+  opacity: 0.9;
   min-height: 0;
 `
 

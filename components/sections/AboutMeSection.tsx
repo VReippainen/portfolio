@@ -5,8 +5,8 @@ import { MobileScreen } from '../../constants/Breakpoints'
 import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text, TextBold } from '../ui/Text'
-import { getAge } from '../../utils/format'
-import React from 'react'
+import { getAge } from '../../utils/getAge'
+import React, { type JSX } from 'react'
 import styled from 'styled-components'
 
 const Title = styled(Text)`
@@ -35,6 +35,7 @@ export function AboutMeSection({
   title,
   name,
   description,
+  freetime,
   image,
   location,
   dateOfBirth,
@@ -44,8 +45,9 @@ export function AboutMeSection({
       <Column>
         <Title>{title}</Title>
         <Text>{description}</Text>
+        <Text style={{ marginTop: Spacings.S6 }}>{freetime}</Text>
       </Column>
-      <Column>
+      <Column style={{ display: 'flex' }}>
         <Image imageurl={image.fields.file.url} />
       </Column>
       <Column>

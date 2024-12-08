@@ -8,7 +8,7 @@ import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { type JSX } from 'react'
 import styled from 'styled-components'
 
 const StyledLink = styled(Link)`
