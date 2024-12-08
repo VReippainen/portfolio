@@ -47,7 +47,7 @@ export function AboutMeSection({
         <Text>{description}</Text>
         <Text style={{ marginTop: Spacings.S6 }}>{freetime}</Text>
       </Column>
-      <Column style={{ display: 'flex' }}>
+      <Column style={{ display: 'flex', alignItems: 'center' }}>
         <Image imageurl={image.fields.file.url} />
       </Column>
       <Column>
