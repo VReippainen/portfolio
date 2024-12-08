@@ -1,4 +1,5 @@
 import { CareerPage } from '../components/pages/CareerPage'
+import { CertificationPage } from '../components/pages/CertificationPage'
 import { ContactPage } from '../components/pages/ContactPage'
 import { EducationPage } from '../components/pages/EducationPage'
 import { Entry } from 'contentful'
@@ -6,7 +7,7 @@ import { HomePage } from '../components/pages/HomePage'
 import { PageModel } from '../models/PageModel'
 import { ProfilePage } from '../components/pages/ProfilePage'
 import { SkillsPage } from '../components/pages/SkillsPage'
-import React from 'react'
+import React, { type JSX } from 'react'
 
 export function generatePages(pages: Entry<PageModel>[]): JSX.Element[] {
   return pages.map(({ fields }: Entry<PageModel>) => (
@@ -28,6 +29,8 @@ function GenericPage(fields: PageModel): JSX.Element | null {
       return <ProfilePage {...fields} />
     case 'contact':
       return <ContactPage {...fields} />
+    case 'certification':
+      return <CertificationPage {...fields} />
     default:
       return null
   }

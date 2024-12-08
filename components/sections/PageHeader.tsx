@@ -5,6 +5,8 @@ import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
 import styled from 'styled-components'
 
+import type { JSX } from 'react'
+
 const TextContainer = styled.div`
   text-align: center;
   margin-bottom: ${Spacings.S60}px;

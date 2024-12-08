@@ -6,7 +6,7 @@ import { SkillModel } from '../../models/SkillModel'
 import { SkillsModel } from '../../models/SkillsModel'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
-import React, { Fragment } from 'react'
+import React, { Fragment, type JSX } from 'react'
 import styled from 'styled-components'
 
 const SkillContainer = styled(FlexRow)`

@@ -6,9 +6,10 @@ import React, { type JSX } from 'react'
 import styled from 'styled-components'
 
 const Container = styled(SectionPadding)`
-  background-color: ${Colors.white};
+  background-color: ${Colors.backgroundPrimary};
+  opacity: 0.9;
 `
 
-export function EducationPage({ sections, id }: PageModel): JSX.Element {
+export function CertificationPage({ sections, id }: PageModel): JSX.Element {
   return <Container {...{ id }}>{generateSections(sections)}</Container>
 }

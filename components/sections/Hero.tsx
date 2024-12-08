@@ -1,6 +1,6 @@
 import { Colors } from '../../constants/Colors'
 import { FontSize } from '../../constants/FontSize'
-import { Fragment } from 'react'
+import { Fragment, type JSX } from 'react'
 import { HeroModel } from '../../models/HeroModel'
 import { MobileScreen } from '../../constants/Breakpoints'
 import { Spacings } from '../../constants/Spacings'
