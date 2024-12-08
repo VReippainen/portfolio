@@ -6,8 +6,7 @@ import React, { type JSX } from 'react'
 import styled from 'styled-components'
 
 const Container = styled(SectionPadding)`
-  background-color: ${Colors.backgroundPrimary};
-  opacity: 0.9;
+  background-color: ${Colors.white};
 `
 
 export function SkillsPage({ id, sections }: PageModel): JSX.Element {

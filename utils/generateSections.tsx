@@ -2,6 +2,7 @@
 import { AboutMeSection } from '../components/sections/AboutMeSection'
 import { BaseModel } from '../models/BaseModel'
 import { CareerSection } from '../components/sections/CareerSection'
+import { CertificationSection } from '../components/sections/CertificationSection'
 import { ContactSection } from '../components/sections/ContactSection'
 import { EducationSection } from '../components/sections/EducationSection'
 import { Entry } from 'contentful'
@@ -44,6 +45,9 @@ function GenericSection<T extends BaseModel>({
     case 'contactSection':
       // @ts-ignore
       return <ContactSection {...fields} />
+    case 'certificationSection':
+      // @ts-ignore
+      return <CertificationSection {...fields} />
     default:
       return null
   }

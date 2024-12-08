@@ -5,6 +5,7 @@ import { ImageModel } from './ImageModel'
 export interface AboutMeModel extends BaseModel {
   title: string
   description: string
+  freetime: string
   dateOfBirth: Date
   image: Entry<ImageModel>
   location: string

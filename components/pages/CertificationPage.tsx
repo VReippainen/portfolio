@@ -8,9 +8,8 @@ import styled from 'styled-components'
 const Container = styled(SectionPadding)`
   background-color: ${Colors.backgroundPrimary};
   opacity: 0.9;
-  min-height: 0;
 `
 
-export function ContactPage({ sections, id }: PageModel): JSX.Element {
+export function CertificationPage({ sections, id }: PageModel): JSX.Element {
   return <Container {...{ id }}>{generateSections(sections)}</Container>
 }

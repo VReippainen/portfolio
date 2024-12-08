@@ -1,4 +1,5 @@
 import { CareerPage } from '../components/pages/CareerPage'
+import { CertificationPage } from '../components/pages/CertificationPage'
 import { ContactPage } from '../components/pages/ContactPage'
 import { EducationPage } from '../components/pages/EducationPage'
 import { Entry } from 'contentful'
@@ -28,6 +29,8 @@ function GenericPage(fields: PageModel): JSX.Element | null {
       return <ProfilePage {...fields} />
     case 'contact':
       return <ContactPage {...fields} />
+    case 'certification':
+      return <CertificationPage {...fields} />
     default:
       return null
   }

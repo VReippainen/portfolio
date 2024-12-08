@@ -64,9 +64,11 @@ export function EducationSection({
         </Text>
         {ongoing && creditsDone && creditsTotal ? (
           <Text>{`Credits done: ${creditsDone}/${creditsTotal} cr.`}</Text>
-        ) : null}
+        ) : (
+          <></>
+        )}
         <Text>{`${formatMinors(minors)}`}</Text>
-        {gpa ? <Text>{`GPA: ${gpa}`}</Text> : null}
+        {gpa ? <Text>{`GPA: ${gpa}`}</Text> : <></>}
       </SectionItem>
     </SectionContainer>
   )

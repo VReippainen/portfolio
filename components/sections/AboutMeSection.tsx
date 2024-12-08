@@ -35,6 +35,7 @@ export function AboutMeSection({
   title,
   name,
   description,
+  freetime,
   image,
   location,
   dateOfBirth,
@@ -44,8 +45,9 @@ export function AboutMeSection({
       <Column>
         <Title>{title}</Title>
         <Text>{description}</Text>
+        <Text style={{ marginTop: Spacings.S6 }}>{freetime}</Text>
       </Column>
-      <Column>
+      <Column style={{ display: 'flex' }}>
         <Image imageurl={image.fields.file.url} />
       </Column>
       <Column>
