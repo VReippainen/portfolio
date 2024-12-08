@@ -6,7 +6,7 @@ import { HomePage } from '../components/pages/HomePage'
 import { PageModel } from '../models/PageModel'
 import { ProfilePage } from '../components/pages/ProfilePage'
 import { SkillsPage } from '../components/pages/SkillsPage'
-import React from 'react'
+import React, { type JSX } from 'react'
 
 export function generatePages(pages: Entry<PageModel>[]): JSX.Element[] {
   return pages.map(({ fields }: Entry<PageModel>) => (

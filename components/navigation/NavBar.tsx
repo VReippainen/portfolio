@@ -2,7 +2,7 @@ import { Colors } from '../../constants/Colors'
 import { MobileScreen } from '../../constants/Breakpoints'
 import { Spacings } from '../../constants/Spacings'
 import Link from 'next/link'
-import React from 'react'
+import React, { type JSX } from 'react'
 import styled from 'styled-components'
 
 interface Props {

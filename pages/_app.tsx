@@ -1,6 +1,6 @@
 import '../styles/globals.css'
+import { type JSX, useEffect } from 'react'
 import { StyleSheetManager } from 'styled-components'
-import { useEffect } from 'react'
 import TagManager from 'react-gtm-module'
 import isPropValid from '@emotion/is-prop-valid'
 import type { AppProps } from 'next/app'

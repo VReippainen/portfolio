@@ -8,7 +8,7 @@ import { PageModel } from '../models/PageModel'
 import { WebSiteModel } from '../models/WebSiteModel'
 import { fetchWebsite } from '../services/contentfulService'
 import { generatePages } from '../utils/generatePages'
-import React from 'react'
+import React, { type JSX } from 'react'
 
 export interface Props {
   pages: Entry<PageModel>[]

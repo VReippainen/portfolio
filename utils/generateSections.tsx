@@ -8,7 +8,7 @@ import { Entry } from 'contentful'
 import { Hero } from '../components/sections/Hero'
 import { PageHeader } from '../components/sections/PageHeader'
 import { SkillSection } from '../components/sections/SkillSection'
-import React from 'react'
+import React, { type JSX } from 'react'
 
 export function generateSections<T extends BaseModel>(
   sections: Entry<T>[]

@@ -4,7 +4,7 @@ import { SectionContainer, SectionItem } from '../ui/SectionContainer'
 import { Spacings } from '../../constants/Spacings'
 import { Text } from '../ui/Text'
 import { formatYear } from '../../utils/format'
-import React from 'react'
+import React, { type JSX } from 'react'
 
 function formatMinors(minors?: string[]): string {
   if (!minors || minors.length === 0) {

@@ -3,7 +3,7 @@ import { Entry } from 'contentful'
 import { FontSize } from '../../constants/FontSize'
 import { LinkModel } from '../../models/LinkModel'
 import Link from 'next/link'
-import React from 'react'
+import React, { type JSX } from 'react'
 import styled from 'styled-components'
 
 const StyledLink = styled(Link)`
