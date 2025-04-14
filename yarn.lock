@@ -2201,15 +2201,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-sort-imports-es6-autofix@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "eslint-plugin-sort-imports-es6-autofix@npm:0.6.0"
-  peerDependencies:
-    eslint: ">=7.7.0"
-  checksum: cea8ebb56f88f0834088962a833326702ffdd83c731d4fc2aba1fec7dc9ad445ad4faa69a95d8d16d332a7fe84ad7b7d7fdf846f2c276d88fad19a91a265da63
-  languageName: node
-  linkType: hard
-
 "eslint-scope@npm:^8.2.0":
   version: 8.2.0
   resolution: "eslint-scope@npm:8.2.0"
@@ -3570,7 +3561,6 @@ __metadata:
     eslint: ^9.16.0
     eslint-config-prettier: 9.1.0
     eslint-plugin-prettier: ^5.2.1
-    eslint-plugin-sort-imports-es6-autofix: ^0.6.0
     husky: ^9.1.7
     jsdom: ^25.0.1
     next: 15.0.4
